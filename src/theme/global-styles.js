@@ -56,15 +56,12 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: white;
-        color: #242423;
-        background: #FAFAFA;
+        color: #0c0c0c;
+        background: #fafafa;
     }
     
     body {
         font-family: 'Open Sans', sans-serif;
-        margin: 0 auto;
-        padding: 0 13px;
-
     }
 
     h1,h2,h3,h4,h5,h6 {
