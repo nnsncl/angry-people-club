@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const GridContainer = styled.div`
 	pointer-events: none;
-	position: absolute;
 	width: 100%;
-	height: 113%;
+	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(50,2%);
 	grid-template-rows: repeat(50,2%);
@@ -54,14 +53,12 @@ export const FlexContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	height: calc(100vh - 9.5rem);
-	position: relative;
+	height: 90.5vh;
 	align-items: center;
 	justify-content: center;
 `;
 
 export const Item = styled.div`
-	position: relative;
 
     div {
         flex: none;
@@ -69,6 +66,7 @@ export const Item = styled.div`
 	    height: 100%;
         opacity: .6;
     } 
+
 `;
 
 export const Image = styled.div`
