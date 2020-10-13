@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GridContainer = styled.section`
+export const GridContainer = styled.div`
 	pointer-events: none;
 	position: absolute;
 	width: 100%;
@@ -22,11 +22,11 @@ export const GridContainer = styled.section`
     }
 
     #pos-4 {
-        grid-area: 13 / 11 / 32 / 18;
+        grid-area: 13 / 11 / 29 / 23;
     }
 
     #pos-5 {
-        grid-area: 17 / 32 / 32 / 38;
+        grid-area: 16 / 31 / 36 / 43;
     }
 
     #pos-6 {
@@ -38,19 +38,19 @@ export const GridContainer = styled.section`
     }
 
     #pos-8 {
-        grid-area: 38 / 14 / 46 / 22;
+        grid-area: 33 / 14 / 46 / 22;
     }
 
     #pos-9 {
-        grid-area: 40 / 26 / 51 / 32;
+        grid-area: 41 / 25 / 50 / 30;
     }
 
     #pos-10 {
-        grid-area: 37 / 39 / 48 / 47;
+        grid-area: 40 / 37 / 48 / 46;
     }
 `;
 
-export const FlexContainer = styled.div`
+export const FlexContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -60,17 +60,6 @@ export const FlexContainer = styled.div`
 	justify-content: center;
 `;
 
-export const HeadingContainer = styled.div`
-    margin: 0;
-	line-height: 1;
-	position: relative;
-    text-align: center;
-
-    h1 {
-        color: #f6bd60;
-    }
-`;
-
 export const Item = styled.div`
 	position: relative;
 
@@ -78,7 +67,7 @@ export const Item = styled.div`
         flex: none;
         width: 100%;
 	    height: 100%;
-        will-change: transform;
+        opacity: .6;
     } 
 `;
 

@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 export const TitleLarge = styled.h1`
-    font-size: 13.5rem;
+    font-size: 8.6rem;
     font-weight: 800;
-    margin-bottom: 13px;
-    letter-spacing: -3.6px;
+    margin-bottom: 23px;
+    letter-spacing: -2.3px;
+    transition: font-size ease-in .2s;
 
     @media(max-width: 1056px){
-        font-size: 9.5rem;
+        font-size: 5.6rem;
         margin-bottom: 23px;
     }
 `;
@@ -16,6 +17,7 @@ export const TitleMd = styled.h2`
     font-weight: 800;
     letter-spacing: -1.9px;
     letter-spacing: -1.9px;
+    transition: font-size ease-in .2s;
 
     @media(max-width: 672px){
         font-size: 2.3rem;
@@ -24,6 +26,8 @@ export const TitleMd = styled.h2`
 export const TitleSm = styled.h3`
     font-size: 3.6rem;
     margin-bottom: 23px;
+    transition: font-size ease-in .2s;
+
     @media(max-width: 672px){
         font-size: 2.3rem;
     }

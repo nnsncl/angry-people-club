@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography ,GridLayout } from '../components'
+import { GridLayout } from '../components'
 
 export default function GridLayoutContainer() {
     return (
@@ -36,9 +36,6 @@ export default function GridLayoutContainer() {
                     <GridLayout.Image backgroundImage='/images/ospan-ali.jpg' />
                 </GridLayout.Item>
             </GridLayout>
-            <GridLayout.HeadingContainer>
-                <Typography.TitleLarge>Angry People Club.</Typography.TitleLarge>
-            </GridLayout.HeadingContainer>
         </GridLayout.FlexContainer>
     )
 }
