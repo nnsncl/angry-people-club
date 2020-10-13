@@ -8,11 +8,9 @@ export default function App() {
   return (
     <AuthProvider>
       <Router>
-        <div>
-          <PrivateRoute exact path='/' component={Home} />
-          <Route exact path='/signin' component={SignIn} />
-          <Route exact path='/signup' component={SignUp} />
-        </div>
+        <PrivateRoute exact path='/' component={Home} />
+        <Route exact path='/signin' component={SignIn} />
+        <Route exact path='/signup' component={SignUp} />
       </Router>
     </AuthProvider>
   );
