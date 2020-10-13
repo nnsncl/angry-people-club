@@ -56,6 +56,10 @@ export const FlexContainer = styled.section`
 	height: 90.5vh;
 	align-items: center;
 	justify-content: center;
+
+    @media(max-width: 674px) {
+        height: 50vh;
+    }
 `;
 
 export const Item = styled.div`

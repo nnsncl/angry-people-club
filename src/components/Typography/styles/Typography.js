@@ -20,7 +20,7 @@ export const TitleMd = styled.h2`
     transition: font-size ease-in .2s;
 
     @media(max-width: 672px){
-        font-size: 2.3rem;
+        font-size: 3.6rem;
     }
 `;
 export const TitleSm = styled.h3`
