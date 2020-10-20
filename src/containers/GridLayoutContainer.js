@@ -8,9 +8,9 @@ export default function GridLayoutContainer() {
                 <GridLayout.Item id='pos-1'>
                     <GridLayout.Image backgroundImage='/images/raychan.jpg' />
                 </GridLayout.Item>
-                <GridLayout.Item id='pos-2'>
+                {/* <GridLayout.Item id='pos-2'>
                     <GridLayout.Image backgroundImage='/images/ruth-caron.jpg' />
-                </GridLayout.Item>
+                </GridLayout.Item> */}
                 <GridLayout.Item id='pos-3'>
                     <GridLayout.Image backgroundImage='/images/etty-fidele.jpg' />
                 </GridLayout.Item>
@@ -32,9 +32,9 @@ export default function GridLayoutContainer() {
                 <GridLayout.Item id='pos-9'>
                     <GridLayout.Image backgroundImage='/images/pavel-anoshin.jpg' />
                 </GridLayout.Item>
-                <GridLayout.Item id='pos-10'>
+                {/* <GridLayout.Item id='pos-10'>
                     <GridLayout.Image backgroundImage='/images/ospan-ali.jpg' />
-                </GridLayout.Item>
+                </GridLayout.Item> */}
             </GridLayout>
         </GridLayout.FlexContainer>
     )

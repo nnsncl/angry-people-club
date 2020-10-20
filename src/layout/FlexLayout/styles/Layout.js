@@ -7,12 +7,14 @@ const mediaQueries = {
 }
 
 export const Container = styled.section`
+
     ${(restProps) => restProps.maxFreeze && (`
        max-width: 1440px;
     `)}
-    ${(restProps) => restProps.hasPadding && (`
-        padding: 9.5rem 0;
+    ${(restProps) => restProps.maxFreezeSmall && (`
+       max-width: 1056px;
     `)}
+
     margin: 0 auto;
 `;
 
@@ -20,8 +22,17 @@ export const Row = styled.div`
     display: flex;
     flex-wrap: wrap;
 
+    ${(restProps) => restProps.h75 && (`
+        min-height: 75vh;
+        align-items: flex-end;
+
+        @media(max-width: 1056px) {
+            min-height: 50vh;
+        }
+    `)}
+
     ${(restProps) => restProps.hasPadding && (`
-        padding: 22.6rem 0;
+        padding: 23vh 0;
     `)}
 
     @media(max-width: 1024px) {
@@ -37,6 +48,15 @@ export const Col = styled.div`
         ? `${restProps.responsiveSize}`
         : `${restProps.size}
     `};
+
+    ${(restProps) => restProps.halfScreenLg && (`
+        max-width: 50%;
+
+        @media(max-width: 1056px) {
+            max-width: 100%;
+        }
+    `)}
+
 
     ${(restProps) => restProps.breakPoint &&
         mediaQueries[restProps.breakPoint](`

@@ -52,8 +52,8 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: white;
-        color: #fafafa;
-        background: #060A10;
+        color: #111111;
+        background: #f5f3f4;
     }
     
     body {

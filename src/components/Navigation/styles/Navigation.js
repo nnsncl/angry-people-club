@@ -15,8 +15,9 @@ export const Item = styled.div`
 
 
 export const Logotype = styled.a`
-    font-size: 2.3rem;
+    font-size: 3.6rem;
+    line-height: .9em;
+    letter-spacing: -1.3px;
     cursor: pointer;
     font-family: 'Germania One', cursive;
-    color: #F4DE99;
 `;

@@ -68,7 +68,7 @@ export const Item = styled.div`
         flex: none;
         width: 100%;
 	    height: 100%;
-        opacity: .6;
+        ${'' /* opacity: .6; */}
     } 
 
 `;

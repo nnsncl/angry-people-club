@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation } from '../components'
+import { Navigation, Button } from '../components'
 
 export default function NavigationContainer() {
     return (
@@ -9,7 +9,7 @@ export default function NavigationContainer() {
                     <Navigation.Logotype>Angry<br />People<br />Club</Navigation.Logotype>
                 </Navigation.Item>
                 <Navigation.Item>
-                    <span role="img" aria-label="pouting face emoji" >😡</span>
+                    <Button to='/' >Get started</Button>
                 </Navigation.Item>
             </Navigation.Frame>
         </Navigation>

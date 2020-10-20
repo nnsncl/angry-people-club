@@ -11,4 +11,4 @@ Layout.Row = function LayoutRow({ children, ...restProps }) {
 
 Layout.Col = function LayoutCol({ children, ...restProps }){
     return <Col {...restProps}>{children}</Col>
-}   
+}
