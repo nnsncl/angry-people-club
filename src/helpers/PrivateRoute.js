@@ -15,7 +15,7 @@ export default function PrivateRoute({ component: RouteComponent, ...restProps }
                     <RouteComponent {...routeProps} />
                 ) : (
                     // Else, redirect to signin
-                        <Redirect to={'/signin'} />
+                        <Redirect to={'/sabotage'} />
                     )
             }
         />
