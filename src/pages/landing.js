@@ -7,6 +7,7 @@ import { Layout } from '../layout'
 import {
     GridLayoutContainer,
     NavigationContainer,
+    ScrollContainer,
 } from '../containers'
 
 const Landing = () => {
@@ -18,7 +19,7 @@ const Landing = () => {
     }
 
     return (
-        <>
+        <ScrollContainer>
             <NavigationContainer />
             <main>
                 <Layout maxFreeze >
@@ -42,8 +43,7 @@ const Landing = () => {
                     </Layout.Row>
                 </Layout>
             </main>
-
-        </>
+        </ScrollContainer>
     );
 
 };
