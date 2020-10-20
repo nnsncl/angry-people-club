@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import { Link as ReachRouterLink } from 'react-router-dom';
 
-export const Container = styled(ReachRouterLink)`
+export const Container = styled(motion.ReachRouterLink)`
     appearance: button;
     -moz-appearance: button;
     -webkit-appearance: button;
