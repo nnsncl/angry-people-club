@@ -1,20 +1,19 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 import { Link as ReachRouterLink } from 'react-router-dom';
 
-export const Container = styled(motion.ReachRouterLink)`
+export const Container = styled(ReachRouterLink)`
     appearance: button;
     -moz-appearance: button;
     -webkit-appearance: button;
     font-size: 1.3rem;
     font-weight: bold;
     padding: 1.9rem 3.6rem;
-    border-radius: 5rem;
+    border-radius: .9rem;
     background: white;
     cursor: pointer;
     transition: ease-out .2s;
-    text-decoration: none;
     color: #111;
+    text-decoration: none;
 
     &:hover{
         background: #111;
@@ -26,4 +25,7 @@ export const Container = styled(motion.ReachRouterLink)`
     `)}
 `;
 
-export const Link = styled(ReachRouterLink)``;
+export const Link = styled(ReachRouterLink)`
+    text-decoration: none;
+    color: inherit;
+`;
