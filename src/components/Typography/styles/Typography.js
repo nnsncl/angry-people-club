@@ -24,12 +24,14 @@ export const TitleMd = styled.h2`
     }
 `;
 export const TitleSm = styled.h3`
-    font-size: 3.6rem;
-    margin-bottom: 23px;
+    font-size: 5.6rem;
+    font-weight: 400;
+    letter-spacing: -1.9px;
+    margin-bottom: 3.6rem;
     transition: font-size ease-in .2s;
 
     @media(max-width: 672px){
-        font-size: 2.3rem;
+        font-size: 3.6rem;
     }
 `;
 export const TitleXs = styled.h4`
@@ -45,13 +47,12 @@ export const TitleH6 = styled.h6`
 `;
 export const BodyLarge = styled.p`
     font-size: 2.3rem;
+    line-height: 1.5em;
     margin-bottom: 23px;
 `;
 export const Body = styled.p`
     font-size: 1.9rem;
     font-weight: 400;
-    color: #D8D8D8;
-    opacity: .6;
 `;
 export const BodySmall = styled.p`
     font-size: 1.3rem;
