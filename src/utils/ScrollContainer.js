@@ -9,7 +9,7 @@ import {
 } from "framer-motion"
 
 // Empty div with dynamic height
-const Container = styled(motion.div)`
+const Container = styled(motion.main)`
     position: fixed;
     top: 0;
     left: 0;
