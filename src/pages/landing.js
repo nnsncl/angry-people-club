@@ -10,9 +10,7 @@ import styled from 'styled-components'
 import {
     GridLayoutContainer,
     NavigationContainer,
-    ScrollContainer,
 } from '../containers'
-
 
 
 const DirectionContainer = styled(motion.section)`
@@ -65,59 +63,56 @@ const Landing = () => {
     }
 
     return (
-        <ScrollContainer>
+        <>
             <NavigationContainer />
-            <main>
-                <Layout maxFreeze >
-                    <Layout.Row h75 >
-                        <Layout.Col size="1"  >
-                            <Typography.TitleLarge>Sabotage<br />your social life</Typography.TitleLarge>
-                        </Layout.Col>
-                    </Layout.Row>
-                </Layout>
-                <GridLayoutContainer />
-                <Layout maxFreeze >
-                    <Layout.Row responsiveCol hasPadding >
-                        <Layout.Col halfScreenLg >
-                            <Typography.TitleMd>Did you ever wonder what the world could be if there were <b>places specially designed to spread hate</b>?</Typography.TitleMd>
-                            <Typography.BodyLarge>Done. We've created the <b>Angry People Club</b>, a place for trolling and <b>spit your hate through anonymous messages after a long, stressful day.</b></Typography.BodyLarge>
-                            <Typography.BodyLarge>Everything you send on the <b>Angry People Club</b> is <strong>protected with anonymity</strong> so everybody can enjoy your complete sincerity.</Typography.BodyLarge>
-                            <Typography.BodyLarge><b>You're welcome.</b></Typography.BodyLarge>
-                            <Button hasmargin='true' to='/signup' >Get started</Button>
-                        </Layout.Col>
-                    </Layout.Row>
-                </Layout>
-                <DirectionContainer>
-                    <Frame id="pos-1" >
-                        <Item>Feels good to spit on his coffee</Item>
-                    </Frame>
-                    <Frame id="pos-2" >
-                        <Item>I'll burn the place down before i quit</Item>
-                    </Frame>
-                    <Frame id="pos-3" >
-                        <Item>Wish my partner was not that ugly</Item>
-                    </Frame>
-                    <Frame id="pos-4" >
-                        <Item>Stole and crashed a bike today</Item>
-                    </Frame>
-                    <Frame id="pos-5" >
-                        <Item>Sabotage, this is the way</Item>
-                    </Frame>
-                    <Frame id="pos-6" >
-                        <Item>What was that smell</Item>
-                    </Frame>
-                </DirectionContainer>
-                <Layout maxFreeze >
-                    <Layout.Row responsiveCol hasPadding >
-                        <Layout.Col halfScreenLg >
-                            <Typography.TitleSm>Join the Club, contribute to make the world a worse place.</Typography.TitleSm>
-                            <Button hasmargin='true' to='/signup' >Get started</Button>
-                        </Layout.Col>
-                    </Layout.Row>
-                </Layout>
-            </main>
-
-        </ScrollContainer>
+            <Layout maxFreeze >
+                <Layout.Row h75 >
+                    <Layout.Col size="1"  >
+                        <Typography.TitleLarge>Sabotage<br />your social life</Typography.TitleLarge>
+                    </Layout.Col>
+                </Layout.Row>
+            </Layout>
+            <GridLayoutContainer />
+            <Layout maxFreeze >
+                <Layout.Row responsiveCol hasPadding >
+                    <Layout.Col halfScreenLg >
+                        <Typography.TitleMd>Did you ever wonder what the world could be if there were <b>places specially designed to spread hate</b>?</Typography.TitleMd>
+                        <Typography.BodyLarge>Done. We've created the <b>Angry People Club</b>, a place for trolling and <b>spit your hate through anonymous messages after a long, stressful day.</b></Typography.BodyLarge>
+                        <Typography.BodyLarge>Everything you send on the <b>Angry People Club</b> is <strong>protected with anonymity</strong> so everybody can enjoy your complete sincerity.</Typography.BodyLarge>
+                        <Typography.BodyLarge><b>You're welcome.</b></Typography.BodyLarge>
+                        <Button hasmargin='true' to='/signup' >Get started</Button>
+                    </Layout.Col>
+                </Layout.Row>
+            </Layout>
+            <DirectionContainer>
+                <Frame id="pos-1" >
+                    <Item>Feels good to spit on his coffee</Item>
+                </Frame>
+                <Frame id="pos-2" >
+                    <Item>I'll burn the place down before i quit</Item>
+                </Frame>
+                <Frame id="pos-3" >
+                    <Item>Wish my partner was not that ugly</Item>
+                </Frame>
+                <Frame id="pos-4" >
+                    <Item>Stole and crashed a bike today</Item>
+                </Frame>
+                <Frame id="pos-5" >
+                    <Item>Sabotage, this is the way</Item>
+                </Frame>
+                <Frame id="pos-6" >
+                    <Item>What was that smell</Item>
+                </Frame>
+            </DirectionContainer>
+            <Layout maxFreeze >
+                <Layout.Row responsiveCol hasPadding >
+                    <Layout.Col halfScreenLg >
+                        <Typography.TitleSm>Join the Club, contribute to make the world a worse place.</Typography.TitleSm>
+                        <Button hasmargin='true' to='/signup' >Get started</Button>
+                    </Layout.Col>
+                </Layout.Row>
+            </Layout>
+        </>
     );
 
 };
