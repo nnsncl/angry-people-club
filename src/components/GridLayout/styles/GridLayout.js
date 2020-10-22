@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const GridContainer = styled.div`
+export const GridContainer = styled(motion.div)`
 	pointer-events: none;
 	width: 100%;
 	height: 100%;
@@ -49,7 +50,7 @@ export const GridContainer = styled.div`
     }
 `;
 
-export const FlexContainer = styled.section`
+export const FlexContainer = styled(motion.section)`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -62,7 +63,7 @@ export const FlexContainer = styled.section`
     }
 `;
 
-export const Item = styled.div`
+export const Item = styled(motion.div)`
 
     div {
         flex: none;
@@ -73,7 +74,7 @@ export const Item = styled.div`
 
 `;
 
-export const Image = styled.div`
+export const Image = styled(motion.div)`
 	position: relative;
     width: 100%;
 	height: 100%;

@@ -4,55 +4,11 @@ import { AuthContext } from '../auth/Auth';
 import { Typography, Button } from '../components'
 import { Layout } from '../layout'
 
-import { motion } from 'framer-motion'
-import styled from 'styled-components'
-
 import {
     GridLayoutContainer,
     NavigationContainer,
+    DirectionalScrollContainer,
 } from '../containers'
-
-
-const DirectionContainer = styled(motion.section)`
-    right: 0;
-    left: 0;
-    z-index: 1;
-
-    #pos-1 {
-        transform: rotate(19deg);
-    }
-    #pos-2 {
-
-    }
-    #pos-3 {
-        transform: rotate(9deg);
-    }
-    #pos-4 {
-        transform: rotate(-13deg);
-    }
-    #pos-5 {
-
-    }
-    #pos-6 {
-        transform: rotate(13deg);
-    }
-`;
-
-const Frame = styled(motion.div)`
-    font-size: 9vw;
-    white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: -3px;
-    line-height: 1.2em;
-`;
-
-const Item = styled(motion.span)`
-    display: block;
-    background-color: white;
-    white-space: nowrap;
-    padding: .9rem 2.3rem;
-`;
-
 
 const Landing = () => {
 
@@ -84,26 +40,7 @@ const Landing = () => {
                     </Layout.Col>
                 </Layout.Row>
             </Layout>
-            <DirectionContainer>
-                <Frame id="pos-1" >
-                    <Item>Feels good to spit on his coffee</Item>
-                </Frame>
-                <Frame id="pos-2" >
-                    <Item>I'll burn the place down before i quit</Item>
-                </Frame>
-                <Frame id="pos-3" >
-                    <Item>Wish my partner was not that ugly</Item>
-                </Frame>
-                <Frame id="pos-4" >
-                    <Item>Stole and crashed a bike today</Item>
-                </Frame>
-                <Frame id="pos-5" >
-                    <Item>Sabotage, this is the way</Item>
-                </Frame>
-                <Frame id="pos-6" >
-                    <Item>What was that smell</Item>
-                </Frame>
-            </DirectionContainer>
+            <DirectionalScrollContainer />
             <Layout maxFreeze >
                 <Layout.Row responsiveCol hasPadding >
                     <Layout.Col halfScreenLg >
