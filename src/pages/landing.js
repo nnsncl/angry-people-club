@@ -8,6 +8,7 @@ import {
     GridLayoutContainer,
     NavigationContainer,
     DirectionalScrollContainer,
+    FooterContainer,
 } from '../containers'
 
 const Landing = () => {
@@ -49,6 +50,7 @@ const Landing = () => {
                     </Layout.Col>
                 </Layout.Row>
             </Layout>
+            <FooterContainer />
         </>
     );
 
