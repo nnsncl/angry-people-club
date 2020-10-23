@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { withRouter, Redirect } from 'react-router';
 import { AuthContext } from '../auth/Auth';
-import { Typography, Button } from '../components'
+import { Typography, AnimatedTitle, Button } from '../components'
 import { Layout } from '../layout'
 
 import {
@@ -24,8 +24,8 @@ const Landing = () => {
             <NavigationContainer />
             <Layout maxFreeze >
                 <Layout.Row h75 >
-                    <Layout.Col size="1"  >
-                        <Typography.TitleLarge>Sabotage<br />your social life</Typography.TitleLarge>
+                    <Layout.Col halfScreenLg >
+                        <AnimatedTitle>Sabotage your social life</AnimatedTitle>
                     </Layout.Col>
                 </Layout.Row>
             </Layout>
