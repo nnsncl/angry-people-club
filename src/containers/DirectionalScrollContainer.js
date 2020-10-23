@@ -2,31 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-
-const DirectionContainer = styled(motion.section)`
-    right: 0;
-    left: 0;
-    z-index: 1;
-
-    #pos-1 {
-        transform: rotate(19deg);
-    }
-    #pos-2 {
-        transform: rotate(-3deg);
-    }
-    #pos-3 {
-        transform: rotate(9deg);
-    }
-    #pos-4 {
-        transform: rotate(-3deg);
-    }
-    #pos-5 {
-
-    }
-    #pos-6 {
-        transform: rotate(-19deg);
-    }
-`;
+const DirectionContainer = styled.section``;
 
 const Frame = styled(motion.div)`
     font-size: 9vw;
@@ -42,28 +18,34 @@ const Item = styled(motion.span)`
     white-space: nowrap;
     padding: .9rem 2.3rem;
 
-    span {
+    b {
         color: #eb5e28;
     }
 `;
 
+const initial = {
+    x: 0
+}
+const transition = {
+    ease: "easeOut",
+    duration: 6
+}
+
 export default function DirectionalScrollContainer() {
+
     return (
         <DirectionContainer>
-            <Frame id="pos-2" >
-                <Item>I'll <span>*&%/</span> that place before i quit</Item>
+            <Frame initial={ initial } animate={{ x: -190 }} transition={ transition }>
+                <Item>I'll <b>*&%/</b> that <b>*&%/</b></Item>
             </Frame>
-            <Frame id="pos-3" >
-                <Item>Wish my <span>/(!&</span> was not that <span>?§!$</span></Item>
+            <Frame initial={ initial } animate={{ x: 95 }} transition={ transition } >
+                <Item>Wish my <b>/(!&</b> was not that <b>?§!$</b></Item>
             </Frame>
-            <Frame id="pos-5" >
-                <Item>Sabotage, this is the way</Item>
+            <Frame initial={ initial } animate={{ x: 190 }} transition={ transition } >
+                <Item>I swear it was <b>&-"-!</b></Item>
             </Frame>
-            <Frame id="pos-6" >
-                <Item>What was that <span>&-"-!</span></Item>
-            </Frame>
-            <Frame id="pos-4" >
-                <Item><span>¨$*</span> and <span>*&%/</span> a <span>.?%</span> today</Item>
+            <Frame initial={ initial } animate={{ x: -95}} transition={ transition } >
+                <Item><b>¨$*</b> and <b>*&%/</b> a <b>.?%</b></Item>
             </Frame>
         </DirectionContainer>
     )

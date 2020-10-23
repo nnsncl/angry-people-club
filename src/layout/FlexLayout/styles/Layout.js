@@ -22,8 +22,8 @@ export const Row = styled.div`
     display: flex;
     flex-wrap: wrap;
 
-    ${(restProps) => restProps.h75 && (`
-        min-height: 75vh;
+    ${(restProps) => restProps.h66 && (`
+        min-height: 66vh;
         align-items: flex-end;
 
         @media(max-width: 1056px) {
