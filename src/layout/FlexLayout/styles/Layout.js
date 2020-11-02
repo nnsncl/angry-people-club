@@ -22,6 +22,10 @@ export const Row = styled.div`
     display: flex;
     flex-wrap: wrap;
 
+    ${(restProps) => restProps.alignCenter && (`
+        justify-content: center; 
+    `)}
+
     ${(restProps) => restProps.h66 && (`
         min-height: 66vh;
         align-items: flex-end;
@@ -36,10 +40,7 @@ export const Row = styled.div`
     `)}
 
     @media(max-width: 1024px) {
-        flex-direction:
-            ${(restProps) => restProps.responsiveCol && (`
-                column
-            `)}
+        flex-direction: ${(restProps) => restProps.responsiveCol && (`column`)};
     }
 `;
 
@@ -56,7 +57,6 @@ export const Col = styled.div`
             max-width: 100%;
         }
     `)}
-
 
     ${(restProps) => restProps.breakPoint &&
         mediaQueries[restProps.breakPoint](`

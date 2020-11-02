@@ -9,14 +9,17 @@ export const TitleLarge = styled.h1`
 
     @media(max-width: 1056px){
         font-size: 6.8rem;
-        margin-bottom: 23px;
+        margin-bottom: 2.3rem;
     }
 `;
 export const TitleMd = styled.h2`
     font-size: 5.6rem;
     font-weight: 400;
     letter-spacing: -1.9px;
-    margin-bottom: 3.6rem;
+    margin-bottom: ${(restProps) => restProps.hasMarginBottom
+        ? ` 5.6rem;`
+        : ` 3.6rem;`
+    };
     transition: font-size ease-in .2s;
 
     @media(max-width: 672px){
@@ -27,7 +30,10 @@ export const TitleSm = styled.h3`
     font-size: 5.6rem;
     font-weight: 400;
     letter-spacing: -1.9px;
-    margin-bottom: 3.6rem;
+    margin-bottom: ${(restProps) => restProps.hasMarginBottom
+        ? ` 5.6rem;`
+        : ` 3.6rem;`
+    };
     transition: font-size ease-in .2s;
 
     @media(max-width: 672px){
@@ -37,7 +43,7 @@ export const TitleSm = styled.h3`
 export const TitleXs = styled.h4`
     font-size: 1.9rem;
     font-weight: 800;
-    margin-bottom: 13px;
+    margin-bottom: 1.3rem;
 `;
 export const TitleXxs = styled.h5`
     font-size: 1.9rem;
@@ -48,7 +54,11 @@ export const TitleH6 = styled.h6`
 export const BodyLarge = styled.p`
     font-size: 2.3rem;
     line-height: 1.5em;
-    margin-bottom: 23px;
+    
+     margin-bottom: ${(restProps) => restProps.hasMarginBottom
+        ? ` 3.6rem;`
+        : ` 2.3rem;`
+    };
 `;
 export const Body = styled.p`
     font-size: 1.9rem;
