@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-    
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400;500;600&family=Open+Sans&display=swap');
-
     * {
         box-sizing: border-box;
     }
@@ -12,9 +9,8 @@ export const GlobalStyles = createGlobalStyle`
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
     del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
+    small, strike, sub, sup, tt, var, u, i,
+    center, dl, dt, dd, ol, ul, li,
     fieldset, form, label, legend,
     table, caption, tbody, tfoot, thead, tr, th, td,
     article, aside, canvas, details, embed, 
@@ -56,15 +52,12 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: white;
-        color: #242423;
-        background: #FAFAFA;
+        color: #111111;
+        background: #f5f3f4;
     }
     
     body {
         font-family: 'Open Sans', sans-serif;
-        margin: 0 auto;
-        padding: 0 13px;
-
     }
 
     h1,h2,h3,h4,h5,h6 {
