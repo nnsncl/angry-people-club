@@ -44,7 +44,7 @@ export default function ScrollContainer({ children }) {
   const { scrollY } = useViewportScroll()
   const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight])
   // Scroll Easing
-  const physics = { damping: 13, mass: .9, stiffness: 56 }
+  const physics = { damping: 13, mass: .3, stiffness: 56 }
   const spring = useSpring(transform, physics)
 
   return (

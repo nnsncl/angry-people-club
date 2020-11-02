@@ -3,7 +3,11 @@ import { Navigation, Button, Typography } from '../components'
 
 export default function NavigationContainer() {
     return (
-        <Navigation>
+        <Navigation
+            initial={{ y: -190, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 36, damping: 9, mass: .3 }}
+        >
             <Navigation.Frame>
                 <Navigation.Item>
                     <Navigation.Logotype to="/" >

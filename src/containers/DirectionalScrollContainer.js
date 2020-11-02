@@ -28,7 +28,7 @@ const initial = {
 }
 const transition = {
     ease: "easeOut",
-    duration: 6
+    duration: 13
 }
 
 export default function DirectionalScrollContainer() {

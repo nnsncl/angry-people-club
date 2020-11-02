@@ -6,18 +6,27 @@ const container = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.02
-        }
+            staggerChildren: 0.13,
+        },
+
     }
 };
 
 const item = {
-    hidden: { y: "100%" },
+    hidden: {
+        y: "130%",
+        skewY: "13deg",
+    },
     visible: {
         y: "0%",
+        skewY: "0deg",
         transition: {
+            type: "spring",
+            stiffness: 68,
+            damping: 13,
+            mass: 1.5,
             ease: "anticipate",
-            duration: 1
+            duration: 1.3,
         }
     }
 };

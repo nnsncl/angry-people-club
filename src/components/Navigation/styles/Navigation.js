@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { Link as ReachRouterLink } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
-export const Container = styled.nav`
+export const Container = styled(motion.nav)`
     padding: 2.3rem;
 `;
 
@@ -18,6 +19,7 @@ export const Item = styled.div`
 
     p {
         margin-left: .9rem;
+        @media(max-width: 1056px) { display: none; }
     }
 `;
 
@@ -28,13 +30,16 @@ export const Logotype = styled(ReachRouterLink)`
     letter-spacing: -1.3px;
     cursor: pointer;
     font-family: 'Germania One', cursive; */}
-    appearance: button;
-    -moz-appearance: button;
-    -webkit-appearance: button;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     ${'' /* padding: 2.3rem;
     border-radius: 2rem;
     background: white; */}
     cursor: pointer;
     transition: ease-out .2s;
     text-decoration: none;
+
+    svg {
+    }
 `;
