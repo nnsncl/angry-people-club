@@ -3,6 +3,9 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import firebaseApp from '../firebase';
 
+import { motion } from 'framer-motion';
+import { layoutVariant } from '../components/animations/index'
+
 const SignUp = ({ history }) => {
     const handleSignUp = useCallback(async event => {
         // useCallback is used to memoize callbacks
@@ -23,7 +26,12 @@ const SignUp = ({ history }) => {
     }, [history])
 
     return (
-        <div>
+        <motion.div
+            variants={layoutVariant}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+        >
             <h1>Sign Up</h1>
             <form onSubmit={handleSignUp}>
                 <label htmlFor='email' >Email</label>
@@ -33,7 +41,7 @@ const SignUp = ({ history }) => {
                 <button type='submit' >Sign Up</button>
             </form>
             <Link to='/signin' >Sign In</Link>
-        </div>
+        </motion.div>
     );
 };
 

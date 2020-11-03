@@ -20,7 +20,7 @@ export const Container = styled(ReachRouterLink)`
         color: white;
     }
 
-    ${(restProps) => restProps.hasmargin && (`
+    ${(restProps) => restProps.hasMargin && (`
         margin: 2.3rem 0;
     `)}
 `;
