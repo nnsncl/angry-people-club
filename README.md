@@ -1,7 +1,7 @@
 # This project us an Auth-Boilerplate
 Auth Boilerplate using React and Firebase ref : https://github.com/nnsncl/Auth-Boilerplate
 
-Create an .env file at the root of the project which include configuration provided by Firebase
+Create an .env file at the root of the project which include configuration provided by Firebase 
 
 `
 REACT_APP_FIREBASE_KEY=""
