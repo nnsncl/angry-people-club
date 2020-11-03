@@ -6,11 +6,6 @@ import { AnimatePresence } from 'framer-motion';
 
 export default function Routes() {
     const location = useLocation();
-
-    console.log('**********************')
-    console.warn(location)
-    console.log('**********************')
-
     return (
         <AnimatePresence>
             <Switch location={location} key={location.key} >
