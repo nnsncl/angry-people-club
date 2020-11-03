@@ -24,11 +24,12 @@ const Item = styled(motion.span)`
 `;
 
 const initial = {
-    x: 0
+    x: 0,
 }
 const transition = {
-    ease: "easeOut",
-    duration: 13
+    ease: "easeInOut",
+    duration: 9,
+    yoyo: Infinity
 }
 
 export default function DirectionalScrollContainer() {
