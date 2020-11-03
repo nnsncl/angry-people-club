@@ -15,7 +15,7 @@ REACT_APP_FIREBASE_PROJECT_ID=""
 REACT_APP_FIREBASE_STORAGE_BUCKET=""
 
 REACT_APP_FIREBASE_SENDER_ID=""
-`
+` 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
