@@ -1,7 +1,9 @@
 import React, { useCallback } from 'react';
 import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
 import firebaseApp from '../firebase';
+
+import { Layout } from '../layout';
+import { Form, Input, Typography, Button } from '../components';
 
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../components/animations/index'
@@ -32,15 +34,33 @@ const SignUp = ({ history }) => {
             animate="visible"
             exit="exit"
         >
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSignUp}>
-                <label htmlFor='email' >Email</label>
-                <input name='email' type='email' placeholder='Email address' />
-                <label htmlFor='password' >Email</label>
-                <input name='password' type='password' placeholder='Password' />
-                <button type='submit' >Sign Up</button>
-            </form>
-            <Link to='/signin' >Sign In</Link>
+            <Layout maxFreeze >
+                <Layout.Row h100 alignCenter >
+                    <Layout.Col halfScreenLg >
+
+                        <Form onSubmit={handleSignUp} >
+                            <Typography.TitleLarge small>Sign up</Typography.TitleLarge>
+                            <Input
+                                label="Email address"
+                                name="email"
+                                type="email"
+                                placeholder="mail@mail.co"
+                            />
+                            <Input
+                                label="Password"
+                                name="password"
+                                type="password"
+                                placeholder="••••••••"
+                            />
+                            <Input.Container>
+                                <Button.Action hasMarginBottom type='submit'>Sign In</Button.Action>
+                                <Typography.Body>Already have an account? <Button.Link to='/signin' >Sign in</Button.Link>.</Typography.Body>
+                            </Input.Container>
+
+                        </Form>
+                    </Layout.Col>
+                </Layout.Row>
+            </Layout>
         </motion.div>
     );
 };

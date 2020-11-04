@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const TitleLarge = styled.h1`
-    font-size: 13.5rem;
+    font-size: 6.8rem;
     font-weight: 400;
     letter-spacing: -3.6px;
     transition: font-size ease-in .2s;
-    margin-bottom: 9.5rem;
+    margin-bottom: 3.6rem;
 
     @media(max-width: 1056px){
-        font-size: 6.8rem;
+        font-size: 5.6rem;
         margin-bottom: 2.3rem;
     }
 `;

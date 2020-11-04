@@ -25,7 +25,29 @@ export const Container = styled(ReachRouterLink)`
     `)}
 `;
 
+export const Action = styled.button`
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1.9rem 3.6rem;
+    border-radius: .9rem;
+    border: none;
+    background: #111;
+    cursor: pointer;
+    transition: ease-out .2s;
+    color: #f5f3f4;
+    text-decoration: none;
+
+    &:hover{
+        color: #111;
+        background: #f5f3f4;
+    }
+
+    ${(restProps) => restProps.hasMarginBottom && (`
+        margin-bottom: 2.3rem;
+    `)}
+`;
+
 export const Link = styled(ReachRouterLink)`
     text-decoration: none;
-    color: inherit;
+    color: blue;
 `;

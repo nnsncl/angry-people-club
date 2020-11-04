@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from './styles/Button'
+import { Container, Action, Link } from './styles/Button'
 
 export default function Button({ children, ...restProps }) {
     return (
@@ -9,6 +9,10 @@ export default function Button({ children, ...restProps }) {
     )
 }
 
-// Button.Link = function ButtonLink({ children, ...restProps }) {
-//     return <Link {...restProps} >{children}</Link>
-// }
+Button.Action = function ButtonAction({ children, ...restProps }) {
+    return <Action {...restProps}>{children}</Action>
+}
+
+Button.Link = function ButtonLink({ children, ...restProps }) {
+    return <Link {...restProps} >{children}</Link>
+}
