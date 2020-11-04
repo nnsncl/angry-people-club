@@ -1,12 +1,13 @@
 import React from 'react'
 import { Navigation, Button, Typography } from '../components'
 
-export default function NavigationContainer() {
+export default function NavigationContainer({ hasNavigation }) {
     return (
         <Navigation
             initial={{ y: -190, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 36, damping: 9, mass: .3 }}
+            exit={{ y: 0, opacity: 0 }}
         >
             <Navigation.Frame>
                 <Navigation.Item>
@@ -17,9 +18,13 @@ export default function NavigationContainer() {
                     </Navigation.Logotype>
                     <Typography.BodySmall>Angry&nbsp;People&nbsp;Club.</Typography.BodySmall>
                 </Navigation.Item>
-                <Navigation.Item>
-                    <Button to='/signin' >Get started</Button>
-                </Navigation.Item>
+                {
+                    hasNavigation
+                        ? <Navigation.Item  >
+                            <Button to='/signup' >Get started</Button>
+                        </Navigation.Item>
+                        : null
+                }
             </Navigation.Frame>
         </Navigation>
     )

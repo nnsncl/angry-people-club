@@ -31,9 +31,9 @@ const Landing = () => {
             exit="exit"
         >
             <ScrollContainer>
-                <NavigationContainer />
+                <NavigationContainer hasNavigation />
                 <Layout maxFreeze >
-                    <Layout.Row h75 >
+                    <Layout.Row h75  >
                         <Layout.Col halfScreenLg >
                             <AnimatedTitle>Sabotage your social life</AnimatedTitle>
                         </Layout.Col>

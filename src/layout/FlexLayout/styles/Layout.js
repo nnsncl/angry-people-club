@@ -26,13 +26,17 @@ export const Row = styled.div`
         justify-content: center; 
     `)}
 
-    ${(restProps) => restProps.h66 && (`
+    ${(restProps) => restProps.h75 && (`
         min-height: 66vh;
         align-items: flex-end;
 
         @media(max-width: 1056px) {
             min-height: 50vh;
         }
+    `)}
+    ${(restProps) => restProps.h100 && (`
+        min-height: 100vh;
+        align-items: center;
     `)}
 
     ${(restProps) => restProps.hasPadding && (`
