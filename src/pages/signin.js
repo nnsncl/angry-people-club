@@ -1,13 +1,15 @@
 import React, { useCallback, useContext } from 'react';
 import { withRouter, Redirect } from 'react-router';
-import firebaseApp from '../firebase';
+import firebaseApp from '../services/firebase';
 import { AuthContext } from '../auth/Auth';
 
-import { Layout } from '../layout';
+import { Layout } from '../components/layout';
 import { Form, Input, Typography, Button } from '../components';
 
 import { motion } from 'framer-motion';
-import { layoutVariant } from '../components/animations/index'
+import { layoutVariant } from '../theme/animations/index'
+
+import { scrollToTop } from '../hooks/use-scroll-to-top';
 
 const SignIn = ({ history }) => {
     const handleSignIn = useCallback(
@@ -27,10 +29,9 @@ const SignIn = ({ history }) => {
     );
 
     const { currentUser } = useContext(AuthContext);
-
-    if (currentUser) {
-        return <Redirect to='/' />;
-    }
+    if (currentUser) { return <Redirect to='/' /> };
+    scrollToTop();
+    console.log(window.innerHeight)
 
     return (
         <motion.div

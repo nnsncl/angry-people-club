@@ -5,4 +5,4 @@ export { default as Form } from './Form/index';
 export { default as Input } from './Input/index';
 export { default as Button } from './Button/index';
 export { default as Footer } from './Footer/index';
-export { AnimatedTitle } from './animations/AnimatedTitle/index'
+export * from './AnimatedTitle/index'

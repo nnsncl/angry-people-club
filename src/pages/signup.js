@@ -1,12 +1,14 @@
 import React, { useCallback } from 'react';
 import { withRouter } from 'react-router';
-import firebaseApp from '../firebase';
+import firebaseApp from '../services/firebase';
 
-import { Layout } from '../layout';
+import { Layout } from '../components/layout';
 import { Form, Input, Typography, Button } from '../components';
 
 import { motion } from 'framer-motion';
-import { layoutVariant } from '../components/animations/index'
+import { layoutVariant } from '../theme/animations/index'
+
+import { scrollToTop } from '../hooks/use-scroll-to-top';
 
 const SignUp = ({ history }) => {
     const handleSignUp = useCallback(async event => {
@@ -26,6 +28,9 @@ const SignUp = ({ history }) => {
             alert(error);
         }
     }, [history])
+
+    scrollToTop();
+    console.log(window.innerHeight)
 
     return (
         <motion.div

@@ -2,7 +2,7 @@
 AuthProvider store authentication status using createContext API which is used to propagate datas through the Components Tree
 */
 import React, { useState, useEffect } from 'react';
-import firebaseApp from '../firebase';
+import firebaseApp from '../services/firebase';
 
 // Create the context
 export const AuthContext = React.createContext();
