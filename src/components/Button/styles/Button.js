@@ -47,6 +47,26 @@ export const Action = styled.button`
     `)}
 `;
 
+export const Auth = styled(Action)`
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+
+    &:hover {
+        background: white;
+    }
+    
+    svg {
+        width: 1.6rem;
+        height: 1.6rem;
+        max-width: 1.6rem;
+        max-height: 1.6rem;
+        margin-right: 1.3rem;
+    }
+`;
+
 export const Link = styled(ReachRouterLink)`
     text-decoration: none;
     color: blue;
