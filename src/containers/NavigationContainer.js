@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navigation, Button, Typography } from '../components'
 
+import { googleSignIn } from '../hooks/use-google-auth';
+
 export default function NavigationContainer({ hasNavigation }) {
     return (
         <Navigation
@@ -21,7 +23,7 @@ export default function NavigationContainer({ hasNavigation }) {
                 {
                     hasNavigation
                         ? <Navigation.Item  >
-                            <Button to='/signup' >Get started</Button>
+                            <Button.Auth googleIcon onClick={googleSignIn} >Sign in with Google</Button.Auth>
                         </Navigation.Item>
                         : null
                 }
