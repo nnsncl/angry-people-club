@@ -5,7 +5,7 @@ import ScrollContainer from '../utils/ScrollContainer';
 import { AuthContext } from '../auth/Auth';
 
 import { Typography, AnimatedTitle, Button } from '../components';
-import { Layout } from '../layout';
+import { Layout } from '../components/layout/index';
 
 import {
     GridLayoutContainer,
