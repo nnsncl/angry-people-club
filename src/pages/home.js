@@ -1,8 +1,8 @@
 import React from 'react';
-import firebaseApp from '../firebase';
+import firebaseApp from '../services/firebase';
 
 import { motion } from 'framer-motion';
-import { layoutVariant } from '../components/animations/index'
+import { layoutVariant } from '../theme/animations/index'
 
 export default function Home() {
     return (
