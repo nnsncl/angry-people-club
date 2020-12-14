@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import firebaseApp from '../services/firebase';
+import { AuthContext } from '../auth/Auth';
 
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
 export default function Home() {
+
+    const { currentUser } = useContext(AuthContext);
+    console.log(currentUser)
+
     return (
         <motion.div
             variants={layoutVariant}
