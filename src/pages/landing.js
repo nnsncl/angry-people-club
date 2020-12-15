@@ -23,10 +23,8 @@ import { scrollToTop } from '../hooks/use-scroll-to-top';
 
 const Landing = () => {
     const { currentUser } = useContext(AuthContext);
-    if (currentUser) { return <Redirect to='/' />; }
+    if (currentUser) { return <Redirect to='/anonymity' />; }
     scrollToTop();
-
-
 
     return (
         <motion.div
@@ -35,8 +33,8 @@ const Landing = () => {
             animate="visible"
             exit="exit"
         >
+            <NavigationContainer />
             <ScrollContainer>
-                <NavigationContainer />
                 <Layout maxFreeze >
                     <Layout.Row h75  >
                         <Layout.Col halfScreenLg >

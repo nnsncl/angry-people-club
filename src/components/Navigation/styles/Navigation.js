@@ -3,13 +3,19 @@ import { Link as ReachRouterLink } from 'react-router-dom'
 import { motion } from 'framer-motion';
 
 export const Container = styled(motion.nav)`
-    padding: 2.3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    z-index: 1000;
 `;
 
 export const Frame = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 2.3rem;
 `;
 
 export const Item = styled.div`
