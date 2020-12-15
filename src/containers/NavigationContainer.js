@@ -1,9 +1,14 @@
-import React from 'react'
-import { Navigation, Button, Typography } from '../components'
+import React, { useContext } from 'react'
 
+import firebaseApp from '../services/firebase';
+import { AuthContext } from '../auth/Auth';
 import { googleSignIn } from '../hooks/use-google-auth';
 
-export default function NavigationContainer({ hasNavigation }) {
+import { Navigation, Button, Typography } from '../components'
+
+export default function NavigationContainer() {
+    const { currentUser } = useContext(AuthContext);
+
     return (
         <Navigation
             initial={{ y: -190, opacity: 0 }}
@@ -20,13 +25,11 @@ export default function NavigationContainer({ hasNavigation }) {
                     </Navigation.Logotype>
                     <Typography.BodySmall>Angry&nbsp;People&nbsp;Club.</Typography.BodySmall>
                 </Navigation.Item>
-                {
-                    hasNavigation
-                        ? <Navigation.Item  >
-                            <Button.Auth googleIcon onClick={googleSignIn} >Sign in with Google</Button.Auth>
-                        </Navigation.Item>
-                        : null
-                }
+                <Navigation.Item  >
+                    {currentUser
+                        ? <Button.Auth onClick={() => firebaseApp.auth().signOut()} >Sign out</Button.Auth>
+                        : <Button.Auth googleIcon onClick={googleSignIn} >Sign in with Google</Button.Auth>}
+                </Navigation.Item>
             </Navigation.Frame>
         </Navigation>
     )
