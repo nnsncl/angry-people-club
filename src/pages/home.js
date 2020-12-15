@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
-// import { AuthContext } from '../auth/Auth';
+import { AuthContext } from '../auth/Auth';
 
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
 import ScrollContainer from '../utils/ScrollContainer';
 
-import { Typography, Button } from '../components';
+import { Typography, Input, Button } from '../components';
 import { Layout } from '../components/layout/index';
 
 import {
@@ -21,7 +21,7 @@ const userSeeds = {
 }
 
 export default function Home() {
-    // const { currentUser } = useContext(AuthContext);
+    const { currentUser } = useContext(AuthContext);
     const [userInformations, setUserInformations] = useState(null);
 
     useEffect(() => {
@@ -41,13 +41,19 @@ export default function Home() {
         >
             <NavigationContainer />
             <ScrollContainer>
-                <Layout>
-                    <Layout.Row>
-                        <Layout.Col size={'3'} >
-                            <Typography.TitleMd>Let's start by your user name</Typography.TitleMd>
-                        </Layout.Col>
-                        <Layout.Col size={'1'} style={{ height: '100vh', backgroundColor: 'red' }}>
-                            <p>a</p>
+                <Layout maxFreeze >
+                    <Layout.Row h75 >
+                        <Layout.Col halfScreenLg >
+                            <Typography.TitleSm>Let's start by anonymity.</Typography.TitleSm>
+                            <Typography.BodyLarge>Since you've logged in with Google, yes, we know who you are but don't worry, {currentUser.displayName}, you're about to turn anonymous.</Typography.BodyLarge>
+                            <Typography.BodyLarge hasMarginBottom ><b>We've created a username for you</b></Typography.BodyLarge>
+                            <Input
+                                label=""
+                                name="text"
+                                type="text"
+                                placeholder="Vicious Cucumber"
+                            />
+                            <Button.Action>This is my name</Button.Action>
                         </Layout.Col>
                     </Layout.Row>
                 </Layout>
