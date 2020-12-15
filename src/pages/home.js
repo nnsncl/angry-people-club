@@ -1,30 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import firebaseApp from '../services/firebase';
-import { AuthContext } from '../auth/Auth';
+// import { AuthContext } from '../auth/Auth';
 
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
 import ScrollContainer from '../utils/ScrollContainer';
 
-import { Typography, AnimatedTitle, Button } from '../components';
+import { Typography, Button } from '../components';
 import { Layout } from '../components/layout/index';
 
 import {
-    GridLayoutContainer,
     NavigationContainer,
-    DirectionalScrollContainer,
-    FooterContainer,
 } from '../containers';
 
 
-
+const userSeeds = {
+    email: 'niki',
+    name: 'nokinik',
+}
 
 export default function Home() {
+    // const { currentUser } = useContext(AuthContext);
+    const [userInformations, setUserInformations] = useState(null);
 
-    const { currentUser } = useContext(AuthContext);
-    console.log(currentUser)
+    useEffect(() => {
+        setUserInformations(userSeeds);
+    }, []);
+
+    console.log(userInformations)
+    // console.log(setUserInformations(user))
+    // console.log(userInformations)
 
     return (
         <motion.div
@@ -33,19 +39,18 @@ export default function Home() {
             animate="visible"
             exit="exit"
         >
+            <NavigationContainer />
             <ScrollContainer>
-                <NavigationContainer hasNavigation />
                 <Layout>
-                    <Layout.Row  >
+                    <Layout.Row>
                         <Layout.Col size={'3'} >
-                        <AnimatedTitle>Let's start by your user name</AnimatedTitle>
+                            <Typography.TitleMd>Let's start by your user name</Typography.TitleMd>
                         </Layout.Col>
-                        <Layout.Col size={'1'} style={{backgroundColor: 'red'}}>
+                        <Layout.Col size={'1'} style={{ height: '100vh', backgroundColor: 'red' }}>
                             <p>a</p>
                         </Layout.Col>
                     </Layout.Row>
                 </Layout>
-                <FooterContainer />
             </ScrollContainer>
         </motion.div>
     );
