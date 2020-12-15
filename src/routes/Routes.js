@@ -7,8 +7,8 @@ export default function Routes() {
     const location = useLocation();
     return (
         <Switch location={location} key={location.key} >
-            <PrivateRoute exact path='/' component={Home} />
-            <Route exact path='/sabotage' component={Landing} />
+            <PrivateRoute exact path='/anonymity' component={Home} />
+            <Route exact path='/' component={Landing} />
         </Switch>
     )
 }
