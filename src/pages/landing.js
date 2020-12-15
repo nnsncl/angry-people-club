@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { withRouter, Redirect } from 'react-router';
 
-import ScrollContainer from '../utils/ScrollContainer';
 import { AuthContext } from '../auth/Auth';
 import { googleSignIn } from '../hooks/use-google-auth';
 
 import { Typography, AnimatedTitle, Button } from '../components';
 import { Layout } from '../components/layout/index';
+
+import ScrollContainer from '../utils/ScrollContainer';
 
 import {
     GridLayoutContainer,
@@ -35,7 +36,7 @@ const Landing = () => {
             exit="exit"
         >
             <ScrollContainer>
-                <NavigationContainer hasNavigation />
+                <NavigationContainer />
                 <Layout maxFreeze >
                     <Layout.Row h75  >
                         <Layout.Col halfScreenLg >
