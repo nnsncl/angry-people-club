@@ -4,7 +4,7 @@ export const layoutVariant = {
     },
     visible: {
         opacity: 1,
-        transition: { duration: 0.3, delay: .3 },
+        transition: { duration: 0.3, delay: .4 },
     },
     exit: {
         opacity: 0,
