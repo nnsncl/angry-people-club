@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { AuthContext } from '../auth/Auth';
+import { useAuth } from '../hooks/use-auth';
 
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
@@ -21,7 +21,7 @@ const userSeeds = {
 }
 
 export default function Home() {
-    const { currentUser } = useContext(AuthContext);
+    const auth = useAuth();
     const [userInformations, setUserInformations] = useState(null);
 
     useEffect(() => {
@@ -29,8 +29,6 @@ export default function Home() {
     }, []);
 
     console.log(userInformations)
-    // console.log(setUserInformations(user))
-    // console.log(userInformations)
 
     return (
         <motion.div
@@ -45,7 +43,7 @@ export default function Home() {
                     <Layout.Row h75 >
                         <Layout.Col halfScreenLg >
                             <Typography.TitleSm>Let's start by anonymity.</Typography.TitleSm>
-                            <Typography.BodyLarge>Since you've logged in with Google, yes, we know who you are but don't worry, {currentUser.displayName}, you're about to turn anonymous.</Typography.BodyLarge>
+                            <Typography.BodyLarge>Since you've logged in with Google, yes, we know who you are but don't worry, {auth.user.displayName}, you're about to turn anonymous.</Typography.BodyLarge>
                             <Typography.BodyLarge hasMarginBottom ><b>We've created a username for you</b></Typography.BodyLarge>
                             <Input
                                 label=""

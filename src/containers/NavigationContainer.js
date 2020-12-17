@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
-
-import firebaseApp from '../services/firebase';
-import { AuthContext } from '../auth/Auth';
-import { googleSignIn } from '../hooks/use-google-auth';
+import React from 'react'
+import { useAuth } from '../hooks/use-auth';
 
 import { Navigation, Button, Typography } from '../components'
 
 export default function NavigationContainer() {
-    const { currentUser } = useContext(AuthContext);
+    const auth = useAuth();
 
     return (
         <Navigation
@@ -26,9 +23,9 @@ export default function NavigationContainer() {
                     <Typography.BodySmall>Angry&nbsp;People&nbsp;Club.</Typography.BodySmall>
                 </Navigation.Item>
                 <Navigation.Item  >
-                    {currentUser
-                        ? <Button.Auth onClick={() => firebaseApp.auth().signOut()} >Sign out</Button.Auth>
-                        : <Button.Auth googleIcon onClick={googleSignIn} >Sign in with Google</Button.Auth>}
+                    {auth.user
+                        ? <Button.Auth onClick={() => auth.signout()} >Sign out</Button.Auth>
+                        : <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth>}
                 </Navigation.Item>
             </Navigation.Frame>
         </Navigation>

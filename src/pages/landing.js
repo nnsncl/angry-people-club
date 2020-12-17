@@ -1,13 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { withRouter, Redirect } from 'react-router';
 
-import { AuthContext } from '../auth/Auth';
-import { googleSignIn } from '../hooks/use-google-auth';
+import { useAuth } from '../hooks/use-auth';
+import { ScrollContainer, scrollToTop } from '../hooks/use-scroll';
 
 import { Typography, AnimatedTitle, Button } from '../components';
 import { Layout } from '../components/layout/index';
-
-import ScrollContainer from '../utils/ScrollContainer';
 
 import {
     GridLayoutContainer,
@@ -19,11 +17,9 @@ import {
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
-import { scrollToTop } from '../hooks/use-scroll-to-top';
-
 const Landing = () => {
-    const { currentUser } = useContext(AuthContext);
-    if (currentUser) { return <Redirect to='/anonymity' />; }
+    const auth = useAuth();
+    if (auth.user) { return <Redirect to='/' />; }
     scrollToTop();
 
     return (
@@ -58,7 +54,7 @@ const Landing = () => {
                             <Typography.BodyLarge>We've created the <b>Angry People Club</b>, a place for trolling and <b>spit your hate through anonymous messages after a long, stressful day.</b></Typography.BodyLarge>
                             <Typography.BodyLarge>Everything you send on the <b>Angry People Club</b> is <strong>protected with anonymity</strong> so everybody can enjoy your complete sincerity.</Typography.BodyLarge>
                             <Typography.BodyLarge hasMarginBottom ><b>You're welcome.</b></Typography.BodyLarge>
-                            <Button.Auth googleIcon onClick={googleSignIn} >Sign in with Google</Button.Auth>
+                            <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth>
                         </Layout.Col>
                     </Layout.Row>
                 </Layout>
@@ -73,7 +69,7 @@ const Landing = () => {
                     <Layout.Row responsiveCol hasPadding >
                         <Layout.Col halfScreenLg >
                             <Typography.TitleSm hasMarginBottom >Join the Club, contribute to make the world a worse place.</Typography.TitleSm>
-                            <Button.Auth googleIcon onClick={googleSignIn} >Sign in with Google</Button.Auth>
+                            <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth>
                         </Layout.Col>
                     </Layout.Row>
                 </Layout>
