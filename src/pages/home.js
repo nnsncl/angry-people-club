@@ -5,7 +5,7 @@ import { useAuth } from '../hooks/use-auth';
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
-import ScrollContainer from '../utils/ScrollContainer';
+import { ScrollContainer } from '../hooks/use-scroll';
 
 import { Typography, Input, Button } from '../components';
 import { Layout } from '../components/layout/index';
