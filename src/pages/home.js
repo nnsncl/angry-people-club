@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
@@ -14,20 +14,7 @@ import {
 } from '../containers';
 
 
-const userSeeds = {
-    email: 'niki',
-    name: 'nokinik',
-}
-
 export default function Home() {
-    const [userInformations, setUserInformations] = useState(null);
-
-    useEffect(() => {
-        setUserInformations(userSeeds);
-    }, []);
-
-    console.log(userInformations)
-
     return (
         <motion.div
             variants={layoutVariant}
@@ -38,9 +25,6 @@ export default function Home() {
             {/* <NavigationContainer /> */}
             <ScrollContainer>
                 <SidebarContainer />
-                {/* <Sidebar
-                    title="Room Name"
-                /> */}
             </ScrollContainer>
         </motion.div>
     );
