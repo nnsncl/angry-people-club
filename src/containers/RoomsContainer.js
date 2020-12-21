@@ -3,7 +3,7 @@ import { Sidebar, Avatar, Typography, Button } from '../components';
 
 import { useAuth } from '../hooks/use-auth';
 
-export default function MembersContainer() {
+export default function MembersContainer({ id, room }) {
     const auth = useAuth();
     return (
         <>
