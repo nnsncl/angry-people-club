@@ -36,6 +36,7 @@ export const Action = styled.button`
     transition: ease-out .2s;
     color: #f5f3f4;
     text-decoration: none;
+    outline: none;
 
     &:hover{
         color: #111;
@@ -45,6 +46,23 @@ export const Action = styled.button`
     ${(restProps) => restProps.hasMarginBottom && (`
         margin-bottom: 2.3rem;
     `)}
+`;
+
+export const Ghost = styled(Action)`
+    font-size: 1.6rem;
+    padding: 0.9rem 1.3rem;
+    border: 0.05rem solid transparent;
+    opacity: 0.6;
+    background: none;
+   &:hover{
+        border: 0.05rem solid #212121;
+        color: #fafafa;
+        background: transparent;
+        opacity: 1;
+    }
+    &:active{
+        border: 0.05rem solid #fafafa;
+    }
 `;
 
 export const Auth = styled(Action)`
