@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SidebarWrapper = styled.aside`
+export const Wrapper = styled.aside`
     background: #111;
     color: white;
     max-width: 33rem;
@@ -9,7 +9,7 @@ export const SidebarWrapper = styled.aside`
     padding: 1.3rem 1.9rem;
 `;
 
-export const SidebarItem = styled.div`
+export const Item = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
@@ -36,17 +36,17 @@ export const SidebarItem = styled.div`
 
 `;
 
-export const SidebarLabel = styled.div`
+export const Label = styled.div`
     font-weight: bold;
     margin-bottom: 1.3rem;
     opacity: .6;
 `;
 
-export const SidebarHeader = styled.header`
+export const Header = styled.header`
     width: 100%;
     margin-top: 3.6rem;
 `;
-export const SidebarBody = styled.div`
+export const Body = styled.div`
     margin-top: 3.6rem;
 `;
 
@@ -73,7 +73,7 @@ export const ActivityIndicator = styled.div`
     margin: -0.2rem;
 `;
 
-export const SidebarFooter = styled.footer`
+export const Footer = styled.footer`
     position: fixed;
     bottom: 2.3rem;
 `;
