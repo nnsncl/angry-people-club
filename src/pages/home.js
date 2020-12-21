@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-import { useAuth } from '../hooks/use-auth';
-
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
 import { ScrollContainer } from '../hooks/use-scroll';
 
-import { Typography, Sidebar } from '../components';
-import { Layout } from '../components/layout/index';
+// import { Typography, Sidebar } from '../components';
+// import { Layout } from '../components/layout/index';
 
 import {
     NavigationContainer,
+    SidebarContainer,
 } from '../containers';
 
 
@@ -21,7 +20,6 @@ const userSeeds = {
 }
 
 export default function Home() {
-    const auth = useAuth();
     const [userInformations, setUserInformations] = useState(null);
 
     useEffect(() => {
@@ -39,9 +37,10 @@ export default function Home() {
         >
             {/* <NavigationContainer /> */}
             <ScrollContainer>
-                <Sidebar
+                <SidebarContainer />
+                {/* <Sidebar
                     title="Room Name"
-                />
+                /> */}
             </ScrollContainer>
         </motion.div>
     );
