@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Action, Auth, Link } from './styles/Button'
+import { Container, Action, Ghost, Auth, Link } from './styles/Button'
 
 export default function Button({ children, ...restProps }) {
     return (
@@ -11,6 +11,10 @@ export default function Button({ children, ...restProps }) {
 
 Button.Action = function ButtonAction({ children, ...restProps }) {
     return <Action {...restProps}>{children}</Action>
+}
+
+Button.Ghost = function ButtonGhost({ children, ...restProps }) {
+    return <Ghost {...restProps}>{children}</Ghost>
 }
 
 Button.Auth = function ButtonAction({ googleIcon, children, ...restProps }) {

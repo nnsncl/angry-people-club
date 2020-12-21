@@ -8,7 +8,7 @@ export const AvatarContent = styled.div`
     min-width: 23px;
     min-height: 23px;
     background: lightgray;
-    border-radius: 5px;
+    border-radius: 100%;
    ${(restProps) => restProps.backgroundURL && `
     background-image: url(${restProps.backgroundURL});
     background-position: center;
@@ -22,7 +22,7 @@ export const AvatarContent = styled.div`
 export const ActivityIndicator = styled.div`
     width: 9px;
     height: 9px;
-    background: green;
+    background: lightgreen;
     border-radius: 100%;
     margin: -0.2rem;
 `;

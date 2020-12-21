@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Sidebar, Avatar, Typography } from '../components';
+import { Sidebar, Avatar, Typography, Button } from '../components';
 
 import { useAuth } from '../hooks/use-auth';
 
@@ -7,13 +7,15 @@ import { useAuth } from '../hooks/use-auth';
 export default function SidebarContainer() {
     const auth = useAuth();
 
+    console.dir(auth.user);
+
     useEffect(() => {
         auth.user.updateProfile({
             email: 'nuniroland@gmail.com',
             phoneNumber: '+11234567890',
             emailVerified: false,
             password: 'newPassword',
-            displayName: 'John Doe',
+            displayName: 'Gama Niki',
             photoURL: 'https://media.giphy.com/media/h26R1JMxiqYpwp0rkF/giphy.gif',
             disabled: false,
         })
@@ -32,27 +34,38 @@ export default function SidebarContainer() {
                     <Typography.BodySmall>Current Room</Typography.BodySmall>
                 </Sidebar.Label>
                 <Sidebar.Item hasBackground>
-                    <svg width="32px" height="32px" viewBox="0 0 48 48">
-                        <path d="M33 27h-3v-6h3a1 1 0 000-2h-3v-4l-2-1-1 1v4h-6v-4l-1-1-1 1v4h-4l-2 1 2 1h4v6h-4l-2 1 2 1h4v4l1 1 1-1v-4h6v4l1 1 2-1v-4h3l2-1-2-1zm-12-6h6v6h-6v-6z" fill="white" />
-                    </svg>
-                    <Typography.BodySmall>text</Typography.BodySmall>
+                    <Sidebar.Item >
+                        <Avatar backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
+                        <Typography.BodySmall>Hell's Kitchen</Typography.BodySmall>
+                    </Sidebar.Item>
+                    <Button.Ghost>&#215;</Button.Ghost>
                 </Sidebar.Item>
             </Sidebar.Header>
 
             <Sidebar.Body>
                 <Sidebar.Label>
                     <Typography.BodySmall>Rooms</Typography.BodySmall>
+                    <Button.Ghost>&#43;</Button.Ghost>
                 </Sidebar.Label>
-                <Sidebar.Item hasMarginBottom >
-                    <svg width="32px" height="32px" viewBox="0 0 48 48">
-                        <path d="M33 27h-3v-6h3a1 1 0 000-2h-3v-4l-2-1-1 1v4h-6v-4l-1-1-1 1v4h-4l-2 1 2 1h4v6h-4l-2 1 2 1h4v4l1 1 1-1v-4h6v4l1 1 2-1v-4h3l2-1-2-1zm-12-6h6v6h-6v-6z" fill="white" />
-                    </svg>
-                    <Typography.BodySmall>text</Typography.BodySmall>
+                <Sidebar.Item flexItem >
+                    <Sidebar.Item>
+                    <Avatar backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
+                        <Typography.BodySmall>Hell's Kitchen</Typography.BodySmall>
+                    </Sidebar.Item>
+                    <Button.Ghost>&#9656;</Button.Ghost>
+                </Sidebar.Item>
+                <Sidebar.Item hasMarginBottom flexItem >
+                    <Sidebar.Item>
+                    <Avatar backgroundURL='https://media.giphy.com/media/2U1WOzgmZVw2Y/giphy.gif' />
+                        <Typography.BodySmall>Vicious Moskitos Gang</Typography.BodySmall>
+                    </Sidebar.Item>
+                    <Button.Ghost>&#9656;</Button.Ghost>
                 </Sidebar.Item>
                 <Sidebar.Label>
                     <Typography.BodySmall>Members</Typography.BodySmall>
+                    <Button.Ghost>&#43;</Button.Ghost>
                 </Sidebar.Label>
-                <Sidebar.Item  hasSmallMarginBottom >
+                <Sidebar.Item hasSmallMarginBottom >
                     <Avatar hasIndicator backgroundURL={auth.user.photoURL} />
                     <Typography.BodySmall>{auth.user.displayName}</Typography.BodySmall>
                 </Sidebar.Item>
