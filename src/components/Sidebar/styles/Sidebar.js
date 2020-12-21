@@ -7,6 +7,7 @@ export const Wrapper = styled.aside`
     min-width: 33rem;
     height: 100vh;
     padding: 1.3rem 1.9rem;
+    border-right: 0.05rem solid #212121;
 `;
 
 export const Item = styled.div`
@@ -44,33 +45,9 @@ export const Label = styled.div`
 
 export const Header = styled.header`
     width: 100%;
-    margin-top: 3.6rem;
+    margin: 3.6rem 0;
 `;
 export const Body = styled.div`
-    margin-top: 3.6rem;
-`;
-
-export const AvatarWrapper = styled.div`
-    margin-right: 0.9rem;
-`;
-
-export const AvatarContent = styled.div`
-    min-width: 23px;
-    min-height: 23px;
-    background: lightgray;
-    border-radius: 5px;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-`;
-
-export const ActivityIndicator = styled.div`
-    width: 9px;
-    height: 9px;
-    background: green;
-    border-radius: 100%;
-    margin: -0.2rem;
 `;
 
 export const Footer = styled.footer`

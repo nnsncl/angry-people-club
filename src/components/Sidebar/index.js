@@ -4,9 +4,6 @@ import {
     Header,
     Body,
     Item,
-    ActivityIndicator,
-    AvatarWrapper,
-    AvatarContent,
     Label,
     Footer
 } from './styles/Sidebar';
@@ -37,14 +34,4 @@ Sidebar.Item = function SidebarItem({ children, ...restProps }) {
 
 Sidebar.Footer = function SidebarFooter({ children, ...restProps }) {
     return <Footer {...restProps}>{children}</Footer>
-}
-
-Sidebar.Avatar = function SidebarAvatar() {
-    return (
-        <AvatarWrapper>
-            <AvatarContent>
-                <ActivityIndicator />
-            </AvatarContent>
-        </AvatarWrapper>
-    );
 }
