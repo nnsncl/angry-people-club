@@ -40,7 +40,7 @@ export default function Home() {
             {/* <NavigationContainer /> */}
             <ScrollContainer>
                 <Sidebar
-                    title="Sidebar title"
+                    title="Room Name"
                 />
             </ScrollContainer>
         </motion.div>
