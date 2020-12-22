@@ -48,6 +48,20 @@ export const Action = styled.button`
     `)}
 `;
 
+export const Small = styled(Action)`
+    font-size: 1.6rem;
+    padding: 0.9rem 1.3rem;
+    border: 0.05rem solid transparent;
+    opacity: 0.6;
+    background: #111;
+   &:hover{
+        border: 0.05rem solid #212121;
+        color: #f5f3f4;
+        background: #111;
+        opacity: 1;
+    }
+`;
+
 export const Ghost = styled(Action)`
     font-size: 1.6rem;
     padding: 0.9rem 1.3rem;
@@ -56,7 +70,7 @@ export const Ghost = styled(Action)`
     background: none;
    &:hover{
         border: 0.05rem solid #212121;
-        color: #fafafa;
+        color: #f5f3f4;
         background: transparent;
         opacity: 1;
     }
@@ -66,7 +80,7 @@ export const Ghost = styled(Action)`
 `;
 
 export const Auth = styled(Action)`
-    background: white;
+    background: #f5f3f4;
     display: flex;
     align-items: center;
     justify-content: center;
