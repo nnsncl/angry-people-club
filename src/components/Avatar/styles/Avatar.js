@@ -8,12 +8,17 @@ export const AvatarContent = styled.div`
     min-width: 23px;
     min-height: 23px;
     background: lightgray;
-    border-radius: 100%;
+    border-radius: ${(restProps) => restProps.squared
+        ? `0.3rem`
+        : `100%`
+    };
+
    ${(restProps) => restProps.backgroundURL && `
-    background-image: url(${restProps.backgroundURL});
-    background-position: center;
-    background-size: cover;
+        background-image: url(${restProps.backgroundURL});
+        background-position: 50% 50%;
+        background-size: cover;
     `}
+
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;

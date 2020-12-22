@@ -1,29 +1,32 @@
 import React, { useEffect } from 'react'
 import { Sidebar, Avatar, Typography, Button, Navigation } from '../components';
-import { MembersContainer, RoomsContainer } from '../containers';
+import { MembersContainer, RoomsContainer, SidebarFooterContainer } from '../containers';
 import { useAuth } from '../hooks/use-auth';
 
 
 export default function SidebarContainer() {
     const auth = useAuth();
 
-    console.dir(auth.user);
+    console.dir(auth.user.uid);
 
-    useEffect(() => {
-        auth.user.updateProfile({
-            email: 'nuniroland@gmail.com',
-            phoneNumber: '+11234567890',
-            emailVerified: false,
-            password: 'newPassword',
-            displayName: 'Gama Niki',
-            photoURL: 'https://media.giphy.com/media/h26R1JMxiqYpwp0rkF/giphy.gif',
-            disabled: false,
-        })
-    }, [auth.user]);
+    auth.createFirestoreCollection();
+
+    // useEffect(() => {
+    //     auth.user.updateProfile({
+    //         email: 'nuniroland@gmail.com',
+    //         phoneNumber: null,
+    //         emailVerified: true,
+    //         password: null,
+    //         displayName: 'Gama Niki',
+    //         photoURL: 'https://media.giphy.com/media/Ny0wKKu09ppug/giphy.gif',
+    //         disabled: false,
+    //     })
+    // }, [auth.user]);
 
     return (
         <Sidebar>
             <Navigation.LogoIcon />
+
             <Sidebar.Header>
                 <Sidebar.Label>
                     <Typography.BodySmall>Current Room</Typography.BodySmall>
@@ -33,7 +36,7 @@ export default function SidebarContainer() {
                         <Avatar backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
                         <Typography.BodySmall>Hell's Kitchen</Typography.BodySmall>
                     </Sidebar.Item>
-                    <Button.Ghost>&#215;</Button.Ghost>
+                    <Button.Small>&#215;</Button.Small>
                 </Sidebar.Item>
             </Sidebar.Header>
 
@@ -41,11 +44,7 @@ export default function SidebarContainer() {
                 <RoomsContainer />
                 <MembersContainer />
             </Sidebar.Body>
-
-            <Sidebar.Footer>
-                <Typography.BodySmall>Made with <span role="img" aria-label="Anger symbol" title="Anger symbol" >💢</span> by <a style={{ color: "white" }} href="https://github.com/nnsncl" rel="noopener noreferrer" title="Go to project's creator github" target="_blank" >nuni</a>.</Typography.BodySmall>
-            </Sidebar.Footer>
-
+            <SidebarFooterContainer />
         </Sidebar>
     )
 }
