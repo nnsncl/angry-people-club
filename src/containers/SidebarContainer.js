@@ -9,7 +9,7 @@ export default function SidebarContainer() {
 
     console.dir(auth.user.uid);
 
-    auth.createFirestoreCollection();
+    // auth.createFirestoreCollection();
 
     // useEffect(() => {
     //     auth.user.updateProfile({
