@@ -2,21 +2,24 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 
 import * as firebase from 'firebase/app';
+import firebaseConfig from '../services/firebaseConfig'
+import "firebase/firestore";
 import 'firebase/auth';
 
-import firebaseConfig from '../services/firebase';
-
-firebase.initializeApp(firebaseConfig);
-
-
+firebase.initializeApp(firebaseConfig)
 export const authContext = createContext();
-export function ProvideAuth({ children }) {
-  const auth = useProvideAuth();
-  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
-};
 
 export const useAuth = () => {
   return useContext(authContext);
+};
+export function ProvideAuth({ children }) {
+  const auth = useProvideAuth();
+
+  return (
+    <authContext.Provider value={auth}>
+      {children}
+    </authContext.Provider>
+  );
 };
 
 function useProvideAuth() {
@@ -35,21 +38,20 @@ function useProvideAuth() {
       });
   };
 
-  useEffect(() => {
-    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(false);
-      }
-    });
-    return () => unsubscribe();
-  }, []);
+  // useEffect(() => {
+  //   const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+  //     if (user) {
+  //       setUser(user);
+  //     } else {
+  //       setUser(false);
+  //     }
+  //   });
+  //   return () => unsubscribe();
+  // }, []);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(setUser);
   }, []);
-
 
   return {
     user,

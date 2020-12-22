@@ -22,10 +22,8 @@ export default function NavigationContainer() {
                     </Navigation.Logotype>
                     <Typography.BodySmall>Angry&nbsp;People&nbsp;Club.</Typography.BodySmall>
                 </Navigation.Item>
-                <Navigation.Item  >
-                    {auth.user
-                        ? <Button.Auth onClick={() => auth.signout()} >Sign out</Button.Auth>
-                        : <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth>}
+                <Navigation.Item>
+                    <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth>
                 </Navigation.Item>
             </Navigation.Frame>
         </Navigation>
