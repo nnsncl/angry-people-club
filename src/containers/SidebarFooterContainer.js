@@ -9,7 +9,7 @@ export default function SidebarFooterContainer(){
     return (
         <Sidebar.Footer>
         <Sidebar.Item flexItem >
-            <Avatar squared backgroundURL={auth.user.photoURL} />
+            <Avatar large squared backgroundURL={auth.user.photoURL} />
             <Sidebar.Item flexItem>
                 <span>
                     <Typography.BodySmall><strong>{auth.user.displayName}</strong></Typography.BodySmall>
