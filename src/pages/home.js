@@ -6,13 +6,11 @@ import { layoutVariant } from '../theme/animations/index'
 import { ScrollContainer } from '../hooks/use-scroll';
 
 // import { Typography, Sidebar } from '../components';
-// import { Layout } from '../components/layout/index';
 
 import {
-    NavigationContainer,
+    ChatContainer,
     SidebarContainer,
 } from '../containers';
-
 
 export default function Home() {
     return (
@@ -22,9 +20,12 @@ export default function Home() {
             animate="visible"
             exit="exit"
         >
-            {/* <NavigationContainer /> */}
             <ScrollContainer>
-                <SidebarContainer />
+                <div style={{ display: "flex", flexDirection: "row" }} >
+                    <SidebarContainer />
+                    <ChatContainer />
+                </div>
+
             </ScrollContainer>
         </motion.div>
     );

@@ -7,7 +7,6 @@ export const Wrapper = styled.aside`
     display: flex;
     flex-direction: column;
     height: 100vh;
-    max-width: 33rem;
     min-width: 33rem;
     padding: 1.9rem 2.3rem;
 `;
@@ -27,8 +26,6 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: #212121;
-    padding: 1.3rem;
 
     p {
         line-height: 1.3;
