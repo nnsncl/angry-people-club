@@ -6,7 +6,7 @@ import { Sidebar, Avatar, Typography, Button } from '../components';
 export default function ChatContainer(){
     return (
         <div style={{ width: "100%", background: 'red' }} >
-a
+            Chat screen
         </div>
     );
 };
