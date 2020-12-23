@@ -13,7 +13,7 @@ export default function SidebarFooterContainer(){
             <Sidebar.Item flexItem>
                 <span>
                     <Typography.BodySmall><strong>{auth.user.displayName}</strong></Typography.BodySmall>
-                    <Typography.BodySmall>{auth.user.uid.split('', 20)}</Typography.BodySmall>
+                    <Typography.BodySmall>{auth.user.uid.split('', 8)}</Typography.BodySmall>
                 </span>
                 <Button.Small onClick={() => auth.signout()} >
                     <svg width="13px" height="13px" viewBox="0 0 64 64" >
