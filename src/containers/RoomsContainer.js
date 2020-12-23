@@ -1,10 +1,10 @@
 import React from 'react'
 import { Sidebar, Avatar, Typography, Button } from '../components';
 
-import { useAuth } from '../hooks/use-auth';
+// import { useAuth } from '../hooks/use-auth';
 
 export default function MembersContainer({ id, room }) {
-    const auth = useAuth();
+    // const auth = useAuth();
     return (
         <>
             <Sidebar.Label>

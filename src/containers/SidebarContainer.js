@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Sidebar, Avatar, Typography, Button, Navigation } from '../components';
 import { MembersContainer, RoomsContainer, SidebarFooterContainer } from '../containers';
-import { useAuth } from '../hooks/use-auth';
+// import { useAuth } from '../hooks/use-auth';
 
 
 export default function SidebarContainer() {
-    const auth = useAuth();
+    // const auth = useAuth();
 
-    console.dir(auth.user.uid);
-
-    // auth.createFirestoreCollection();
+    // console.dir(auth.user.uid);
 
     // useEffect(() => {
     //     auth.user.updateProfile({
@@ -32,11 +30,8 @@ export default function SidebarContainer() {
                     <Typography.BodySmall>Current Room</Typography.BodySmall>
                 </Sidebar.Label>
                 <Sidebar.Item hasBackground>
-                    <Sidebar.Item >
-                        <Avatar backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
-                        <Typography.BodySmall>Hell's Kitchen</Typography.BodySmall>
-                    </Sidebar.Item>
-                    <Button.Small>&#215;</Button.Small>
+                    <Avatar backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
+                    <Typography.BodySmall>Hell's Kitchen</Typography.BodySmall>
                 </Sidebar.Item>
             </Sidebar.Header>
 
