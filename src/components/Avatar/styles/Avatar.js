@@ -8,8 +8,11 @@ export const AvatarContent = styled.div`
     ${(restProps) => restProps.large
         ? ` min-width: 36px;
             min-height: 36px;`
-        : ` min-width: 23px;
-            min-height: 23px;`
+        : restProps.Xlarge
+            ? ` min-width: 64px;
+                min-height: 64px;`
+            : ` min-width: 23px;
+                min-height: 23px;`
     }
     background: lightgray;
     border-radius: ${(restProps) => restProps.squared

@@ -8,6 +8,7 @@ export const Wrapper = styled.aside`
     flex-direction: column;
     height: 100vh;
     min-width: 33rem;
+    max-width: 33rem;
     padding: 1.9rem 2.3rem;
 `;
 
@@ -36,9 +37,9 @@ export const Label = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     font-weight: bold;
     margin-bottom: 1.3rem;
+    ${(restProps) => restProps.hasMarginBottom && `margin-bottom: 2.3rem;`}
 `;
 
 export const Item = styled.div`
@@ -53,6 +54,7 @@ export const Item = styled.div`
         && `
         background: #212121;
         padding: 1.3rem;
+        border-radius: 8px;
     `}
     ${(restProps) => restProps.flexItem && `justify-content: space-between;`}
     ${(restProps) => restProps.hasMarginBottom && `margin-bottom: 3.6rem;`}

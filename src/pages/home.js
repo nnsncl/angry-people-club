@@ -6,6 +6,7 @@ import { layoutVariant } from '../theme/animations/index'
 import { ScrollContainer } from '../hooks/use-scroll';
 
 // import { Typography, Sidebar } from '../components';
+import { Layout } from '../components/layout/index';
 
 import {
     ChatContainer,
@@ -21,11 +22,12 @@ export default function Home() {
             exit="exit"
         >
             <ScrollContainer>
-                <div style={{ display: "flex", flexDirection: "row" }} >
+                <Layout maxFreezeLarge >
+                    <Layout.Row>
                     <SidebarContainer />
-                    <ChatContainer />
-                </div>
-
+                        <ChatContainer />
+                    </Layout.Row>
+                </Layout>
             </ScrollContainer>
         </motion.div>
     );

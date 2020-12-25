@@ -30,8 +30,7 @@ export default function SidebarContainer() {
                     <Typography.BodySmall>Current Room</Typography.BodySmall>
                 </Sidebar.Label>
                 <Sidebar.Item hasBackground>
-                    <Avatar backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
-                    <Typography.BodySmall>Hell's Kitchen</Typography.BodySmall>
+                    <Typography.Body><b>#</b>&nbsp;&nbsp;Hell's Kitchen</Typography.Body>
                 </Sidebar.Item>
             </Sidebar.Header>
 

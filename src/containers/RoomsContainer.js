@@ -11,17 +11,17 @@ export default function MembersContainer({ id, room }) {
                 <Typography.BodySmall>Rooms</Typography.BodySmall>
                 <Button.Ghost>&#43;</Button.Ghost>
             </Sidebar.Label>
-            <Sidebar.Item flexItem >
+            <Sidebar.Item hasSmallMarginBottom flexItem >
                 <Sidebar.Item>
-                    <Avatar backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
-                    <Typography.BodySmall>Hell's Kitchen</Typography.BodySmall>
+                    <Avatar large backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
+                    <Typography.Body>Hell's Kitchen</Typography.Body>
                 </Sidebar.Item>
                 <Button.Ghost>&#9656;</Button.Ghost>
             </Sidebar.Item>
             <Sidebar.Item hasMarginBottom flexItem >
                 <Sidebar.Item>
-                    <Avatar backgroundURL='https://media.giphy.com/media/2U1WOzgmZVw2Y/giphy.gif' />
-                    <Typography.BodySmall>Vicious Moskitos Gang</Typography.BodySmall>
+                    <Avatar large backgroundURL='https://media.giphy.com/media/2U1WOzgmZVw2Y/giphy.gif' />
+                    <Typography.Body>Los Moskitos</Typography.Body>
                 </Sidebar.Item>
                 <Button.Ghost>&#9656;</Button.Ghost>
             </Sidebar.Item>

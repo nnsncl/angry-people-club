@@ -8,6 +8,9 @@ const mediaQueries = {
 
 export const Container = styled.section`
 
+    ${(restProps) => restProps.maxFreezeLarge && (`
+       max-width: 1920px;
+    `)}
     ${(restProps) => restProps.maxFreeze && (`
        max-width: 1440px;
     `)}

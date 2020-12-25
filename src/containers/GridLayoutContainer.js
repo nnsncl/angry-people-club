@@ -1,5 +1,5 @@
 import React from 'react';
-import ressources from '../seeds/unsplash-ressources.json';
+import ressources from '../json/unsplash-ressources.json';
 import { GridLayout } from '../components'
 import { v4 as uuidv4 } from 'uuid';
 

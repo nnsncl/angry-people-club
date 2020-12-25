@@ -7,12 +7,12 @@ export default function MembersContainer() {
     const auth = useAuth();
     return (
         <>
-            <Sidebar.Label>
+            <Sidebar.Label hasMarginBottom>
                 <Typography.BodySmall>Members</Typography.BodySmall>
             </Sidebar.Label>
             <Sidebar.Item hasSmallMarginBottom >
-                <Avatar hasIndicator backgroundURL={auth.user.photoURL} />
-                <Typography.BodySmall>{auth.user.displayName}</Typography.BodySmall>
+                <Avatar large hasIndicator backgroundURL={auth.user.photoURL} />
+                <Typography.Body>{auth.user.displayName}</Typography.Body>
             </Sidebar.Item>
         </>
     );
