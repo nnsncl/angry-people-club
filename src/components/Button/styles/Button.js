@@ -63,7 +63,11 @@ export const Small = styled(Action)`
 `;
 
 export const Ghost = styled(Action)`
-    font-size: 1.6rem;
+    ${(restProps) => restProps.large 
+        ?  (`font-size: 2.4rem;`)
+        :  (`font-size: 1.6rem;`)
+    }
+
     padding: 0.9rem 1.3rem;
     border: 0.05rem solid transparent;
     opacity: 0.6;
