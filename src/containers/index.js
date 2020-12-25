@@ -5,5 +5,6 @@ export { default as RoomsContainer } from './RoomsContainer';
 export { default as MembersContainer } from './MembersContainer';
 export { default as SidebarFooterContainer } from './SidebarFooterContainer';
 export { default as SidebarContainer } from './SidebarContainer';
+export { default as AppbarContainer } from './AppbarContainer';
 export { default as ChatContainer } from './ChatContainer';
 export { default as FooterContainer } from './FooterContainer';

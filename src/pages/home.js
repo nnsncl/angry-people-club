@@ -10,6 +10,7 @@ import { Layout } from '../components/layout/index';
 
 import {
     ChatContainer,
+    AppbarContainer,
     SidebarContainer,
 } from '../containers';
 
@@ -24,8 +25,11 @@ export default function Home() {
             <ScrollContainer>
                 <Layout maxFreezeLarge >
                     <Layout.Row>
-                    <SidebarContainer />
-                        <ChatContainer />
+                        <SidebarContainer />
+                        <div style={{ display: "flex", flex: "1", flexDirection: 'column' }}>
+                            <AppbarContainer />
+                            <ChatContainer />
+                        </div>
                     </Layout.Row>
                 </Layout>
             </ScrollContainer>
