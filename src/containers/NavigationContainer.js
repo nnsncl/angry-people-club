@@ -1,10 +1,10 @@
 import React from 'react'
-import { useAuth } from '../hooks/use-auth';
+// import { useAuth } from '../hooks/use-auth';
 
 import { Navigation, Button, Typography } from '../components'
 
 export default function NavigationContainer() {
-    const auth = useAuth();
+    // const auth = useAuth();
 
     return (
         <Navigation
@@ -23,7 +23,7 @@ export default function NavigationContainer() {
                     <Typography.BodySmall>Angry&nbsp;People&nbsp;Club.</Typography.BodySmall>
                 </Navigation.Item>
                 <Navigation.Item>
-                    <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth>
+                    {/* <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth> */}
                 </Navigation.Item>
             </Navigation.Frame>
         </Navigation>

@@ -1,18 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Sidebar, Avatar, Typography } from '../components';
-
-import { useAuth } from '../hooks/use-auth';
+import { selectUser } from '../features/userSlice';
 
 export default function MembersContainer() {
-    const auth = useAuth();
+    const user = useSelector(selectUser)
+
     return (
         <>
             <Sidebar.Label hasMarginBottom>
                 <Typography.BodySmall>Members</Typography.BodySmall>
             </Sidebar.Label>
             <Sidebar.Item hasSmallMarginBottom >
-                <Avatar large hasIndicator backgroundURL={auth.user.photoURL} />
-                <Typography.Body>{auth.user.displayName}</Typography.Body>
+                <Avatar large hasIndicator backgroundURL={user.photo} />
+                <Typography.Body>{user.displayName}</Typography.Body>
             </Sidebar.Item>
         </>
     );
