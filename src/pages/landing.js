@@ -1,7 +1,6 @@
 import React from 'react';
-import { withRouter, Redirect } from 'react-router';
+import { withRouter } from 'react-router';
 
-// import { useAuth } from '../hooks/use-auth';
 import { auth, provider } from '../services/firebase';
 import { ScrollContainer, scrollToTop } from '../hooks/use-scroll';
 

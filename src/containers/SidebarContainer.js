@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sidebar, Avatar, Typography, Navigation } from '../components';
+import { Sidebar, Typography, Navigation } from '../components';
 import { MembersContainer, RoomsContainer, SidebarFooterContainer } from '../containers';
 // import { useAuth } from '../hooks/use-auth';
 

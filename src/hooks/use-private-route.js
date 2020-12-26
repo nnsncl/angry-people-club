@@ -30,6 +30,7 @@ export default function PrivateRoute({ component: RouteComponent, ...restProps }
             router.push('/sabotage');
           }
         })
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
       
     return (

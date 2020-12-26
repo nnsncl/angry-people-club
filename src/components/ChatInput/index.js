@@ -1,6 +1,6 @@
 import React from 'react'
 import { Wrapper, Frame, IconContainer, Input, Form } from './styles/ChatInput';
-import { Button } from '../../components';
+// import { Button } from '../../components';
 
 export default function ChatInput() {
     return (

@@ -1,10 +1,14 @@
 import React from 'react'
-// import { useAuth } from '../hooks/use-auth';
+import { auth, provider } from '../services/firebase';
 
 import { Navigation, Button, Typography } from '../components'
 
 export default function NavigationContainer() {
-    // const auth = useAuth();
+    const signIn = () => {
+        auth
+            .signInWithPopup(provider)
+            .catch((error) => alert(error.message))
+    }
 
     return (
         <Navigation
@@ -23,7 +27,7 @@ export default function NavigationContainer() {
                     <Typography.BodySmall>Angry&nbsp;People&nbsp;Club.</Typography.BodySmall>
                 </Navigation.Item>
                 <Navigation.Item>
-                    {/* <Button.Auth googleIcon onClick={() => auth.googleSignIn()} >Sign in with Google</Button.Auth> */}
+                    <Button.Auth googleIcon onClick={signIn} >Sign in with Google</Button.Auth>
                 </Navigation.Item>
             </Navigation.Frame>
         </Navigation>
