@@ -31,7 +31,7 @@ export default function PrivateRoute({ component: RouteComponent, ...restProps }
           }
         })
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [])
+      }, [dispatch])
       
     return (
         <Route {...restProps}
