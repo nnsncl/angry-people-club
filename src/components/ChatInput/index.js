@@ -1,25 +1,23 @@
 import React from 'react'
-import { Wrapper, Frame, IconContainer, Input, Form } from './styles/ChatInput';
-// import { Button } from '../../components';
+import { Wrapper, Frame, IconContainer, IconFrame, Input, Form } from './styles/ChatInput';
 
-export default function ChatInput() {
+export default function ChatInput({ placeholder, value, ...restProps }) {
     return (
-        <Wrapper>
-            <Frame>
-                <Form>
-                    <Input placeholder={`Message`} />
-                    <button type="submit" >submit</button>
-                </Form>
-            </Frame>
-
-            <Frame>
-                <IconContainer>
-                    <svg width="24" height="24" viewBox="0 0 48 48" fill="none" >
-                        <path fillRule="evenodd" clipRule="evenodd" d="M0.360046 37.9998L14.2 9.27979L28.04 37.9998H24.12L20.6 30.5598H7.80005L4.28005 37.9998H0.360046ZM14.2001 17.0396L9.40009 27.1996H19.0001L14.2001 17.0396Z" fill="white" />
-                        <path opacity="0.3" fillRule="evenodd" clipRule="evenodd" d="M42.6801 36V38H46.1201V18H42.6801V20C41.0001 18.48 38.7601 17.6802 36.3201 17.6802C30.4401 17.6802 26.1201 22.2002 26.1201 28C26.1201 33.8003 30.4401 38.3203 36.3201 38.3203C38.7601 38.3203 41.0001 37.52 42.6801 36ZM42.6801 31.8403C41.5201 33.7202 39.28 35.0806 36.4 35.0806C32.48 35.0806 29.6801 31.9604 29.6801 28.0005C29.6801 24.0405 32.48 20.9204 36.4 20.9204C39.28 20.9204 41.5201 22.2803 42.6801 24.1606V31.8403Z" fill="white" />
-                    </svg>
-                </IconContainer>
-
+        <>
+            <Wrapper>
+                <Frame>
+                    <Form onSubmit={e => e.preventDefault()}>
+                        <Input
+                            placeholder={placeholder}
+                            value={value}
+                            type='text'
+                            {...restProps}
+                        />
+                        <button type="submit"></button>
+                    </Form>
+                </Frame>
+            </Wrapper>
+            <IconFrame>
                 <IconContainer>
                     <svg width="24" height="24" viewBox="0 0 48 48" fill="none" >
                         <rect opacity="0.3" x="8" y="22" width="34" height="4" rx="1" fill="white" />
@@ -42,12 +40,7 @@ export default function ChatInput() {
                         <path fillRule="evenodd" clipRule="evenodd" d="M14.68 38.0001V9.6001H25.36C30 9.6001 33.8 13.4001 33.8 18.0401C33.8 20.0401 33.04 21.6801 31.8 22.9201C34.2 24.2001 35.8 26.5201 35.8 29.5601C35.8 34.2401 32 38.0001 27.2 38.0001H14.68ZM21.0799 32.12H26.5999C28.3199 32.12 29.5599 30.88 29.5599 29.32C29.5599 27.76 28.3199 26.48 26.5999 26.48H21.0799V32.12ZM21.0799 21.0799H24.6399C26.3599 21.0799 27.5999 19.8399 27.5999 18.2799C27.5999 16.7199 26.3599 15.4399 24.6399 15.4399H21.0799V21.0799Z" fill="white" />
                     </svg>
                 </IconContainer>
-                <IconContainer>
-                    <svg width="24" height="24" viewBox="0 0 48 48" fill="none" >
-                        <path fillRule="evenodd" clipRule="evenodd" d="M21.5081 39.7282V25.0802C16.3001 25.0802 12.0581 20.8382 12.0581 15.6302C12.0581 10.4222 16.3001 6.18018 21.5081 6.18018H32.6381V39.7282H29.3621V9.45618H24.8261V39.7282H21.5081Z" fill="white" />
-                    </svg>
-                </IconContainer>
-            </Frame>
-        </Wrapper>
+            </IconFrame>
+        </>
     )
 }

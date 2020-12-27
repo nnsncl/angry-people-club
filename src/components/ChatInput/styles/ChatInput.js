@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     background: #212121;
-    padding: 3.6rem;
+    padding: 1.9rem;
     margin: 2.3rem;
     border-radius: 8px;
 `;
@@ -17,6 +17,12 @@ export const Frame = styled.div`
     button{
         margin-right: 1.3rem;
     }
+`;
+
+export const IconFrame = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin: 2.3rem;
 `;
 
 export const IconContainer = styled.span`
@@ -38,7 +44,6 @@ export const Form = styled.form`
 
 export const Input = styled.input`
     padding: 1.3rem 0;
-    margin-bottom: 2.3rem;
     outline: none;
     border: none;
     background: transparent;
@@ -50,9 +55,10 @@ export const Input = styled.input`
     ::placeholder{
         transition: all ease-out .2s;
     }
-    :hover{
-        ::placeholder {
-        color: white;
-    }
+    :disabled{
+        cursor: not-allowed;
+        ::placeholder{
+            opacity: 0.3
+        }   
     }
 `;

@@ -12,7 +12,9 @@ export default function Message({ backgroundURL, userName, timeStamp, content })
             <Frame>
                 <Heading>
                     <Typography.Body><b>{userName}</b>&nbsp;•&nbsp;</Typography.Body>
-                    <Typography.BodySmall>Sent the&nbsp;{timeStamp}</Typography.BodySmall>
+                    <Typography.BodySmall>
+                        {new Date(timeStamp?.toDate()).toUTCString()}
+                    </Typography.BodySmall>
                 </Heading>
                 <Content>
                     <Typography.Body>{content}</Typography.Body>

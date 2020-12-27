@@ -27,7 +27,7 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: center;
     width: 100%;
-
+    
     p {
         line-height: 1.3;
     }
