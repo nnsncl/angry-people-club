@@ -36,6 +36,7 @@ export const Action = styled.button`
     transition: ease-out .2s;
     color: #f5f3f4;
     text-decoration: none;
+    outline: none;
 
     &:hover{
         color: #111;
@@ -47,8 +48,43 @@ export const Action = styled.button`
     `)}
 `;
 
+export const Small = styled(Action)`
+    font-size: 1.6rem;
+    padding: 0.9rem 1.3rem;
+    border: 0.05rem solid transparent;
+    opacity: 0.6;
+    background: #111;
+   &:hover{
+        border: 0.05rem solid #212121;
+        color: #f5f3f4;
+        background: #111;
+        opacity: 1;
+    }
+`;
+
+export const Ghost = styled(Action)`
+    ${(restProps) => restProps.large 
+        ?  (`font-size: 2.4rem;`)
+        :  (`font-size: 1.6rem;`)
+    }
+
+    padding: 0.9rem 1.3rem;
+    border: 0.05rem solid transparent;
+    opacity: 0.6;
+    background: none;
+   &:hover{
+        border: 0.05rem solid #212121;
+        color: #f5f3f4;
+        background: transparent;
+        opacity: 1;
+    }
+    &:active{
+        border: 0.05rem solid #fafafa;
+    }
+`;
+
 export const Auth = styled(Action)`
-    background: white;
+    background: #f5f3f4;
     display: flex;
     align-items: center;
     justify-content: center;

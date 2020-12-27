@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Action, Auth, Link } from './styles/Button'
+import { Container, Action, Ghost, Small, Auth, Link } from './styles/Button'
 
 export default function Button({ children, ...restProps }) {
     return (
@@ -13,6 +13,14 @@ Button.Action = function ButtonAction({ children, ...restProps }) {
     return <Action {...restProps}>{children}</Action>
 }
 
+Button.Ghost = function ButtonGhost({ children, ...restProps }) {
+    return <Ghost {...restProps}>{children}</Ghost>
+}
+
+Button.Small = function ButtonSmall({ children, ...restProps }) {
+    return <Small {...restProps} >{children}</Small>
+}
+
 Button.Auth = function ButtonAction({ googleIcon, children, ...restProps }) {
     return (
         <Auth {...restProps}>
@@ -22,8 +30,8 @@ Button.Auth = function ButtonAction({ googleIcon, children, ...restProps }) {
                     <path d="M272 544c74 0 135-24 181-65l-88-68c-25 16-56 26-93 26-71 0-131-48-153-113H29v70c46 92 140 150 243 150z" fill="#34a853" />
                     <path d="M119 324c-11-33-11-70 0-104v-70H29c-39 77-39 168 0 244l90-70z" fill="#fbbc04" />
                     <path d="M272 108c39-1 76 14 105 41l77-78a272 272 0 00-425 79l90 70c22-64 82-112 153-112z" fill="#ea4335" />
-                  </svg>
-                : <></> }
+                </svg>
+                : <></>}
             {children}
         </Auth>
     )

@@ -14,7 +14,7 @@ const Frame = styled(motion.div)`
 
 const Item = styled(motion.span)`
     display: block;
-    background-color: white;
+    /* background-color: white; */
     white-space: nowrap;
     padding: .9rem 2.3rem;
 

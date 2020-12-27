@@ -1,22 +1,42 @@
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { Route, Redirect } from 'react-router-dom';
-import { useAuth } from './use-auth';
 import { useRouter } from "./use-router.js";
 
+import { auth } from '../services/firebase';
+import { signIn, signOut } from '../features/userSlice';
+import { selectUser } from '../features/userSlice';
+
 export default function PrivateRoute({ component: RouteComponent, ...restProps }) {
-    const auth = useAuth();
+    const dispatch = useDispatch();
+    const user = useSelector(selectUser)
     const router = useRouter();
 
+
     useEffect(() => {
-        if (auth.user === false){
-          router.push('/sabotage');
-        }
-      }, [auth, router]);
+        auth.onAuthStateChanged((authUser) => {
+          if(authUser) {
+                dispatch(
+                    signIn({
+                    uid: authUser.uid,
+                    photo: authUser.photoURL,
+                    email: authUser.email,
+                    displayName: authUser.displayName,
+                }))
+                router.push('/');
+          } else {
+            dispatch(signOut())
+            router.push('/sabotage');
+          }
+        })
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [dispatch])
       
     return (
         <Route {...restProps}
             render={routeProps =>
-                !!auth.user
+                !!user
                     ? (<RouteComponent {...routeProps} />)
                     : (<Redirect to={'/'} />)
             }
