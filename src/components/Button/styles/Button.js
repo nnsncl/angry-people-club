@@ -79,8 +79,20 @@ export const Ghost = styled(Action)`
         opacity: 1;
     }
     &:active{
-        border: 0.05rem solid #fafafa;
+        border: 0.05rem solid #f5f3f4;
     }
+`;
+
+export const Light = styled(Action)`
+        background: #181819;
+        color: white;
+        padding: 1.3rem 1.7rem;
+        border-radius: 100%;
+        transition: .2s ease;
+
+        &:hover {
+            background: #f5f3f4;
+        }
 `;
 
 export const Auth = styled(Action)`
