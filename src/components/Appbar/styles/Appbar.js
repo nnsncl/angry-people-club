@@ -6,18 +6,17 @@ export const Wrapper = styled.nav`
     justify-content: space-between;
     padding: 2.3rem;
     width: 100%;
+    color: #111;
 
-    border-bottom: 0.05rem solid #212121;
 
-    h1, h2, h3, h4{
-        line-height: 0;
-        margin: 0;
-    }
 `;
 export const Frame = styled.div`
     display: flex;
     align-items: center;
 
+    p {
+        margin: 0;
+    }
     button {
         margin-right: 1.3rem;
         &:last-of-type{
