@@ -66,4 +66,5 @@ export const Body = styled.p`
 `;
 export const BodySmall = styled.p`
     font-size: 1.3rem;
+    font-weight: 500;
 `;
