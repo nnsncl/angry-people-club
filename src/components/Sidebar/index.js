@@ -3,6 +3,8 @@ import {
     Wrapper,
     Header,
     Body,
+    List,
+    ListItem,
     Item,
     Label,
     Footer
@@ -28,6 +30,13 @@ Sidebar.Label = function SidebarLabel({ children, ...restProps }) {
     return <Label {...restProps}>{children}</Label>
 }
 
+Sidebar.List = function SidebarList({ children, ...restProps }) {
+    return <List {...restProps}>{children}</List>
+}
+
+Sidebar.ListItem = function SidebarListItem({ children, ...restProps }) {
+    return <ListItem {...restProps}>{children}</ListItem>
+}
 Sidebar.Item = function SidebarItem({ children, ...restProps }) {
     return <Item {...restProps}>{children}</Item>
 }

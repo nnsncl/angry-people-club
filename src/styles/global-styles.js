@@ -51,7 +51,7 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 62.5%;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background: #111111;
+        background: #000000;
         color: #fafafa;
         ${'' /* background: #f5f3f4; */}
     }

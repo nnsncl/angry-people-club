@@ -1,17 +1,18 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { selectRoomName } from '../features/appSlice';
+import { selectUser } from '../features/userSlice';
+import { auth } from '../services/firebase';
+// import { selectRoomName } from '../features/appSlice';
 
-import { Sidebar, Typography, Navigation } from '../components';
-import { MembersContainer, RoomsContainer, SidebarFooterContainer } from '../containers';
+import { Sidebar, Avatar, Typography, Button } from '../components';
+import { RoomsContainer } from '../containers';
 
 export default function SidebarContainer() {
-    const roomName = useSelector(selectRoomName);
+    const user = useSelector(selectUser);
+    // const roomName = useSelector(selectRoomName);
 
-    // const auth = useAuth();
-
+    
     // console.dir(auth.user.uid);
-
     // useEffect(() => {
     //     auth.user.updateProfile({
     //         email: 'nuniroland@gmail.com',
@@ -26,28 +27,30 @@ export default function SidebarContainer() {
 
     return (
         <Sidebar>
-            <Navigation.LogoIcon />
-            { roomName
-                ? <Sidebar.Header>
-                    <Sidebar.Label>
-                        <Typography.BodySmall>Current Room</Typography.BodySmall>
-                    </Sidebar.Label>
-                    <Sidebar.Item hasBackground>
-                        <Typography.Body>
-                            <span>
-                                <svg width="16" height="16" viewBox="0 0 48 48" fill="none">
-                                    <path opacity="0.3" fillRule="evenodd" clipRule="evenodd" d="M10 30L6 43L19 39L10 30Z" fill="white" />
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M16 4C10.4772 4 6 8.47705 6 14V34C6 39.5229 10.4772 44 16 44H36C41.5228 44 46 39.5229 46 34V14C46 8.47705 41.5228 4 36 4H16ZM14.8906 24.3359C13.9716 24.9487 13.7231 26.1904 14.3358 27.1094C17.3551 31.6387 21.2913 34 26 34C30.7086 34 34.6448 31.6387 37.6641 27.1094C38.2767 26.1904 38.0284 24.9487 37.1094 24.3359C36.1903 23.7236 34.9486 23.9717 34.3358 24.8906C32.0219 28.3618 29.2913 30 26 30C22.7086 30 19.9781 28.3618 17.6641 24.8906C17.0514 23.9717 15.8096 23.7236 14.8906 24.3359Z" fill="white" />
-                                </svg>
-                            </span>&nbsp;&nbsp;{roomName}</Typography.Body>
+            <Sidebar.Header>
+                <Sidebar.Item>
+                    <Avatar Xlarge backgroundURL={user.photo} />
+                    <Sidebar.Item flexItem>
+                        <span>
+                            <Typography.BodySmall><strong>{user.displayName}</strong></Typography.BodySmall>
+                            <Typography.BodySmall>{user.uid.substring(0, 8)}</Typography.BodySmall>
+                        </span>
                     </Sidebar.Item>
-                </Sidebar.Header>
-                : null }
+                </Sidebar.Item>
+            </Sidebar.Header>
             <Sidebar.Body>
                 <RoomsContainer />
-                <MembersContainer />
             </Sidebar.Body>
-            <SidebarFooterContainer />
+            <Sidebar.Footer>
+                <Sidebar.Item flexItem >
+                    <Button.Ghost onClick={() => auth.signOut()} >
+                        <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.246 10.6053C16.1702 10.0002 17.4098 10.2589 18.0148 11.183C18.6199 12.1072 18.3612 13.3468 17.437 13.9518C14.0694 16.1566 12 19.9006 12 24C12 30.6274 17.3726 36 24 36C30.6274 36 36 30.6274 36 24C36 19.991 34.0217 16.3194 30.7751 14.094C29.8641 13.4695 29.6318 12.2246 30.2563 11.3136C30.8808 10.4025 32.1256 10.1702 33.0367 10.7947C37.36 13.7582 40 18.6577 40 24C40 32.8366 32.8366 40 24 40C15.1634 40 8 32.8366 8 24C8 18.5371 10.7611 13.5415 15.246 10.6053Z" fill="white" />
+                            <rect opacity="0.3" x="22" y="6" width="4" height="20" rx="1" fill="white" />
+                        </svg>
+                    </Button.Ghost>
+                </Sidebar.Item>
+            </Sidebar.Footer>
         </Sidebar>
     )
 }
