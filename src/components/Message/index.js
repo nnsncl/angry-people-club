@@ -1,24 +1,23 @@
 import React from 'react';
-import { Wrapper, Frame, Heading, Content } from './styles/Message';
+import { Wrapper, Frame, Content } from './styles/Message';
 import { Avatar, Typography } from '../../components';
 
 export default function Message({ backgroundURL, userName, timeStamp, content }) {
 
     return (
         <Wrapper>
+            <Avatar large backgroundURL={backgroundURL} />
             <Frame>
-                <Avatar Xlarge backgroundURL={backgroundURL} />
-            </Frame>
-            <Frame>
-                <Heading>
-                    <Typography.Body><b>{userName}</b>&nbsp;•&nbsp;</Typography.Body>
-                    <Typography.BodySmall>
-                        {new Date(timeStamp?.toDate()).toUTCString()}
-                    </Typography.BodySmall>
-                </Heading>
                 <Content>
-                    <Typography.Body>{content}</Typography.Body>
+                    <Frame>
+                    <Typography.BodySmall><b>{userName}</b></Typography.BodySmall>
+                    </Frame>
+
+                    <Typography.BodySmall>{content}</Typography.BodySmall>
                 </Content>
+                <Typography.BodySmall>
+                    {new Date(timeStamp?.toDate()).toUTCString().substring(0, 17)}
+                </Typography.BodySmall>
             </Frame>
         </Wrapper>
     );
