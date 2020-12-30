@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const AvatarWrapper = styled.div`
     margin-right: 0.9rem;
-    cursor: pointer;
 `;
 
 export const AvatarContent = styled.div`
