@@ -100,7 +100,7 @@ export default function ChatContainer() {
                         : <Layout.Row stretchContent alignCenter hasPadding >
                             <Layout.Col halfScreenLg >
                                 <Typography.TitleSm>😡💢</Typography.TitleSm>
-                                <Typography.TitleSm>Join a room,<br /><b>engage Rage Mode.</b></Typography.TitleSm>
+                                <Typography.TitleSm>Join a room,<br /><b>engage rage mode.</b></Typography.TitleSm>
                                 <Typography.Body>Join or create a room to provide a new place for trolling to the club.</Typography.Body>
                             </Layout.Col>
                         </Layout.Row>}
@@ -112,7 +112,7 @@ export default function ChatContainer() {
                                         <ChatInput.Frame>
                                             <Avatar large backgroundURL={user.photo} />
                                             <ChatInput.Input
-                                                placeholder={roomID ? `Send a message to #${roomName}` : `Join a room to engage Rage Mode`}
+                                                placeholder={`Send a message to #${roomName}`}
                                                 value={input}
                                                 onChange={e => setInput(e.target.value)}
                                                 disabled={!roomID}

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import { auth } from '../services/firebase';
 
+import db from '../services/firebase';
+
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
@@ -17,15 +19,31 @@ import {
 
 export default function Home() {
     const user = useSelector(selectUser);
+
     const [toggleProfileModal, setToggleProfileModal] = useState(false);
+    const [toggleRoomModal, setToggleRoomModal] = useState(false);
+
     const [userName, setUserName] = useState('');
     const [userPhoto, setUserPhoto] = useState('');
 
+    const [roomName, setRoomName] = useState('');
+    const [roomPhoto, setRoomPhoto] = useState('');
+
     const handleUserInfosUpdate = () => {
         auth.currentUser.updateProfile({
-            displayName: userName,
-            photoURL: userPhoto,
+            displayName: `${userName}`,
+            photoURL: `${userPhoto}`,
         })
+    }
+
+    const handleAddRoom = () => {
+        if (roomName) {
+            db.collection('rooms').add({
+                roomName: `${roomName}`,
+                roomPhotoURL: `${roomPhoto}`,
+            })
+        }
+        setToggleRoomModal(!toggleRoomModal)
     }
 
     return (
@@ -40,7 +58,7 @@ export default function Home() {
                 toggleModal={toggleProfileModal}
                 setToggleModal={setToggleProfileModal}
             >
-                <Typography.Body>Your actual personnal informations are based on the Google account you've logged in with. <strong>You can edit your informations</strong> using the following form.</Typography.Body>
+                <Typography.Body>Your actual personnal informations are based on the Google account you've logged in with.</Typography.Body>
                 <form >
                     <Input.Label htmlFor='user-name' >Username</Input.Label>
                     <Input
@@ -63,6 +81,35 @@ export default function Home() {
                     </div>
                 </form>
             </Modal>
+
+            <Modal
+                title="Add a new room"
+                toggleModal={toggleRoomModal}
+                setToggleModal={setToggleRoomModal}
+            >
+                <form onSubmit={e => e.preventDefault()} >
+                    <Input.Label htmlFor='room-name' >Room name</Input.Label>
+                    <Input
+                        type='text'
+                        name='room-name'
+                        placeholder='Select a room name'
+                        defaultValue=''
+                        onChange={e => setRoomName(e.target.value)}
+                    />
+                    <Input.Label htmlFor='room-photo' >Room picture URL</Input.Label>
+                    <Input
+                        type='text'
+                        name='room-photo'
+                        placeholder='Paste a photo URL'
+                        defaultValue=''
+                        onChange={e => setRoomPhoto(e.target.value)}
+                    />
+                    <div>
+                        <Button.Action onClick={handleAddRoom} type='submit' >Create a room</Button.Action>
+                    </div>
+                </form>
+            </Modal>
+
             <NavigationContainer />
             <Layout maxFreezeLarge >
                 <Layout.Row h100 stretchContent responsiveCol >
@@ -95,7 +142,9 @@ export default function Home() {
                                 </Sidebar.Item>
                             </Sidebar.Header>
                             <Sidebar.Body>
-                                <RoomsContainer />
+                                <RoomsContainer>
+                                    <Button.Small onClick={() => setToggleRoomModal(!toggleRoomModal)} >&#43;</Button.Small>
+                                </RoomsContainer>
                             </Sidebar.Body>
                         </Sidebar>
                     </Layout.Col>
