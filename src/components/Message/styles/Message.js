@@ -22,7 +22,7 @@ export const Content = styled.div`
     padding: 2.3rem 1.9rem 1.3rem 1.9rem;
     border-radius: 0 16px 16px 16px;
     background: #f5f3f4;
-    color: #212121;
+    color: #111;
     margin-bottom: 0.9rem;
     width: fit-content;
     max-width: 23vw;
