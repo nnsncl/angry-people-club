@@ -1,12 +1,10 @@
 import React from 'react'
-import { AvatarContent, AvatarWrapper, ActivityIndicator } from './styles/Avatar';
+import { AvatarContent, AvatarWrapper } from './styles/Avatar';
 
-export default function Avatar({ backgroundURL, hasIndicator, ...restProps }) {
+export default function Avatar({ backgroundURL, ...restProps }) {
     return (
         <AvatarWrapper>
-            <AvatarContent backgroundURL={backgroundURL} {...restProps} >
-                { hasIndicator &&  <ActivityIndicator /> }
-            </AvatarContent>
+            <AvatarContent backgroundURL={backgroundURL} {...restProps} />
         </AvatarWrapper>
     );
 };

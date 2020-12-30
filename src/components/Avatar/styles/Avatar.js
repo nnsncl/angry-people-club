@@ -2,16 +2,23 @@ import styled from 'styled-components';
 
 export const AvatarWrapper = styled.div`
     margin-right: 0.9rem;
+    cursor: pointer;
 `;
 
 export const AvatarContent = styled.div`
     ${(restProps) => restProps.large
-        ? ` min-width: 36px;
+        ? ` width: 36px;
+            height: 36px;
+            min-width: 36px;
             min-height: 36px;`
         : restProps.Xlarge
-            ? ` min-width: 64px;
+            ? ` width: 64px;
+                height: 64px;
+                min-width: 64px;
                 min-height: 64px;`
-            : ` min-width: 23px;
+            : ` width: 23px;
+                height: 23px;
+                min-width: 23px;
                 min-height: 23px;`
     }
     background: lightgray;
@@ -32,9 +39,8 @@ export const AvatarContent = styled.div`
 `;
 
 export const ActivityIndicator = styled.div`
-    width: 9px;
-    height: 9px;
-    background: lightgreen;
+    width: 13px;
+    height: 13px;
+    background: #0ACF83;
     border-radius: 100%;
-    margin: -0.2rem;
 `;

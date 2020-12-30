@@ -3,9 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     align-items: flex-start;
-    padding: 3.6rem 0;
-    border-bottom: 0.05rem solid #212121;
-    width: 100%;
+    padding: 1.9rem 0;
+    max-width: 66.6vw;
 `;
 export const Frame = styled.div`
     width: fit-content;
@@ -13,20 +12,26 @@ export const Frame = styled.div`
         margin-right: 1.3rem;
     }   
 `;
-export const Heading = styled.div`
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
+// export const Heading = styled.div`
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 0.9rem;
+// `;
+
+export const Content = styled.div`
+    padding: 2.3rem 1.9rem 1.3rem 1.9rem;
+    border-radius: 0 16px 16px 16px;
+    background: #f5f3f4;
+    color: #111;
+    margin-bottom: 0.9rem;
+    width: fit-content;
+    max-width: 23vw;
+    word-wrap: break-word;
+
     p {
-        &:last-of-type{
-            opacity: 0.6;
+        :first-of-type {
+            margin-bottom: 1.3rem;
         }
     }
-`;
-
-export const Content = styled.span`
-    p {
-        line-height: 1.2;
-        opacity: 0.8;
-    }
+    
 `;

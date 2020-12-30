@@ -28,6 +28,11 @@ export const Row = styled.div`
     ${(restProps) => restProps.alignCenter && (`
         justify-content: center; 
     `)}
+    
+
+    ${(restProps) => restProps.stretchContent && (`
+        align-items: stretch;
+    `)}
 
     ${(restProps) => restProps.h75 && (`
         min-height: 66vh;
@@ -39,14 +44,16 @@ export const Row = styled.div`
     `)}
     ${(restProps) => restProps.h100 && (`
         min-height: 100vh;
-        align-items: center;
     `)}
 
     ${(restProps) => restProps.hasPadding && (`
         padding: 23vh 0;
     `)}
+    ${(restProps) => restProps.hasPaddingLg && (`
+        padding: 33vh 0;
+    `)}
 
-    @media(max-width: 1024px) {
+    @media(max-width: 674px) {
         flex-direction: ${(restProps) => restProps.responsiveCol && (`column`)};
     }
 `;

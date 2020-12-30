@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Action, Ghost, Small, Auth, Link } from './styles/Button'
+import { Container, Action, Ghost, Small, Auth, Light, Link } from './styles/Button'
 
 export default function Button({ children, ...restProps }) {
     return (
@@ -15,6 +15,10 @@ Button.Action = function ButtonAction({ children, ...restProps }) {
 
 Button.Ghost = function ButtonGhost({ children, ...restProps }) {
     return <Ghost {...restProps}>{children}</Ghost>
+}
+
+Button.Light = function ButtonLight({ children, ...restProps }) {
+    return <Light {...restProps} >{children}</Light>
 }
 
 Button.Small = function ButtonSmall({ children, ...restProps }) {

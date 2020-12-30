@@ -5,54 +5,62 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background: #212121;
+    background: white;
     padding: 1.9rem;
-    margin: 2.3rem;
     border-radius: 8px;
+
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.1); 
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.1);
 `;
+
 export const Frame = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
-    button{
-        margin-right: 1.3rem;
-    }
 `;
 
 export const IconFrame = styled.div`
     display: flex;
     justify-content: flex-end;
-    margin: 2.3rem;
+    margin-top: 2.3rem;
 `;
 
-export const IconContainer = styled.span`
-    margin-right: 1.3rem;
+export const IconContainer = styled.button`
+    margin: 0 1.3rem 0 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all ease-out .2s;
+
     :last-of-type{
         margin-right: 0;
+    }
+
+    :hover {
+        opacity: 1;
     }
 `;
 
 export const Form = styled.form`
     width: 100%;
-
-    button {
-        visibility: none;
-        display: none;
-        cursor: none;
-    }
 `;
 
 export const Input = styled.input`
     padding: 1.3rem 0;
+    margin-left: 1.3rem;
     outline: none;
     border: none;
     background: transparent;
     font-size: 1.6rem;
-    color: white;
     width: 100%;
     word-break: break-word;
     -webkit-box-orient: vertical;  
     ::placeholder{
+        opacity: 0.3;
         transition: all ease-out .2s;
     }
     :disabled{
