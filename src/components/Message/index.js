@@ -12,8 +12,7 @@ export default function Message({ backgroundURL, userName, timeStamp, content })
                     <Frame>
                     <Typography.BodySmall><b>{userName}</b></Typography.BodySmall>
                     </Frame>
-
-                    <Typography.BodySmall>{content}</Typography.BodySmall>
+                    <Typography.Body>{content}</Typography.Body>
                 </Content>
                 <Typography.BodySmall>
                     {new Date(timeStamp?.toDate()).toUTCString().substring(0, 17)}

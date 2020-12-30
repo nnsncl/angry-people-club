@@ -28,6 +28,7 @@ export const Row = styled.div`
     ${(restProps) => restProps.alignCenter && (`
         justify-content: center; 
     `)}
+    
 
     ${(restProps) => restProps.stretchContent && (`
         align-items: stretch;
@@ -47,6 +48,9 @@ export const Row = styled.div`
 
     ${(restProps) => restProps.hasPadding && (`
         padding: 23vh 0;
+    `)}
+    ${(restProps) => restProps.hasPaddingLg && (`
+        padding: 33vh 0;
     `)}
 
     @media(max-width: 674px) {

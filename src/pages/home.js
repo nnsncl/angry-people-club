@@ -26,7 +26,7 @@ export default function Home() {
                         <Layout.Col size="1" >
                             <SidebarContainer />
                         </Layout.Col>
-                        <Layout.Col size="5" >
+                        <Layout.Col size="2" >
                             <ChatContainer />
                         </Layout.Col>
                     </Layout.Row>

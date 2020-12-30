@@ -5,9 +5,8 @@ export const Wrapper = styled.aside`
     color: white;
     display: flex;
     flex-direction: column;
-    width: fit-content;
+
     min-width: 36rem;
-    max-width: 36rem;
     height: 100%;
 
     @media(max-width: 1024px){
@@ -53,7 +52,7 @@ export const List = styled.ul`
     }
     
     height: 100%;
-    max-height: 66.6vh;
+    max-height: 72.5vh;
     min-width: 19rem;
     @media(max-width: 674px){
         width: 100%;

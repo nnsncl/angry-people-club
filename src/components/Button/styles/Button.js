@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link as ReachRouterLink } from 'react-router-dom';
 
-export const Container = styled(ReachRouterLink)`
+export const Container = styled.button`
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -31,28 +31,42 @@ export const Action = styled.button`
     padding: 1.9rem 3.6rem;
     border-radius: .9rem;
     border: none;
-    background: #111;
+    background: #212121;
     cursor: pointer;
     transition: ease-out .2s;
     color: #f5f3f4;
     text-decoration: none;
     outline: none;
 
-    &:hover{
-        color: #111;
-        background: #f5f3f4;
+    :disabled{
+        border: none;
+        background: #D8D8D8;
+        color: grey;
     }
+    
+    &:hover{
+        background: #000;
+        :disabled{
+            border: none;
+            background: #D8D8D8;
+            cursor: not-allowed;
+            color: grey;
+        }
+    }
+
+
 
     ${(restProps) => restProps.hasMarginBottom && (`
         margin-bottom: 2.3rem;
     `)}
 `;
 
+
 export const Small = styled(Action)`
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     padding: 0.9rem 1.3rem;
+    border-radius: .5rem;
     border: 0.05rem solid transparent;
-    opacity: 0.6;
     background: #111;
    &:hover{
         border: 0.05rem solid #212121;

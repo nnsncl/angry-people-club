@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     align-items: flex-start;
-    padding: 2.3rem 0;
+    padding: 1.9rem 0;
     max-width: 66.6vw;
 `;
 export const Frame = styled.div`
@@ -19,12 +19,14 @@ export const Frame = styled.div`
 // `;
 
 export const Content = styled.div`
-    padding: 1.3rem 1.3rem 0.3rem 1.3rem;
+    padding: 2.3rem 1.9rem 1.3rem 1.9rem;
     border-radius: 0 16px 16px 16px;
-    background: white;
-    color: #111;
+    background: #f5f3f4;
+    color: #212121;
     margin-bottom: 0.9rem;
     width: fit-content;
+    max-width: 23vw;
+    word-wrap: break-word;
 
     p {
         :first-of-type {
