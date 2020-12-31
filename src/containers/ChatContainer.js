@@ -9,16 +9,16 @@ import db from '../services/firebase';
 import { selectRoomID, selectRoomName } from '../features/appSlice';
 import { selectUser } from '../features/userSlice';
 
-// import { useFirestoreQuery } from '../hooks/use-firestore-query';
-// import { scrollToBottom } from '../hooks/use-scroll';
-
 import { Message, ChatInput, AppBar, Typography, Button, Avatar } from '../components';
 import { Layout } from '../components/layout/index';
 
 export default function ChatContainer() {
     const user = useSelector(selectUser);
+
     const roomID = useSelector(selectRoomID);
     const roomName = useSelector(selectRoomName);
+    const [roomPhoto, setRoomPhoto] = useState('');
+
 
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
@@ -35,8 +35,20 @@ export default function ChatContainer() {
                         doc.data()
                     )
                 ))
+                
+            const docRef = db.collection("rooms").doc(roomID);
+            docRef.get().then(function (doc) {
+                if (doc.exists) {
+                    setRoomPhoto(doc.data().roomPhotoURL)
+                }
+            }).catch(function (error) {
+                console.log("Error getting document:", error);
+            })
+
         }
-    }, [roomID])
+    }, [messages, roomID])
+
+
 
     useEffect(() => {
         const messagesList = document.getElementById('messages-list');
@@ -45,7 +57,12 @@ export default function ChatContainer() {
         }
     }, [messages])
 
+
+
     const handleSendMessage = (e) => {
+        let mlerm = new Audio();
+        mlerm.src = '/mp3/mlerm.mp3';
+
         if (e.key === 'Enter') {
             db
                 .collection('rooms')
@@ -55,8 +72,9 @@ export default function ChatContainer() {
                     timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
                     message: input,
                     user: user,
-                })
-            setInput('')
+                });
+            mlerm.play();
+            setInput('');
         }
     }
 
@@ -69,7 +87,7 @@ export default function ChatContainer() {
                             ? <Layout.Col size="1" >
                                 <AppBar>
                                     <AppBar.Frame>
-                                        <Avatar Xlarge backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
+                                        <Avatar Xlarge backgroundURL={roomPhoto} />
                                         <Typography.BodyLarge>{roomName}</Typography.BodyLarge>
                                     </AppBar.Frame>
                                     <AppBar.Frame>
@@ -100,7 +118,7 @@ export default function ChatContainer() {
                         : <Layout.Row stretchContent alignCenter hasPadding >
                             <Layout.Col halfScreenLg >
                                 <Typography.TitleSm>😡💢</Typography.TitleSm>
-                                <Typography.TitleSm>Join a room,<br /><b>engage Rage Mode.</b></Typography.TitleSm>
+                                <Typography.TitleSm>Join a room,<br /><b>engage rage mode.</b></Typography.TitleSm>
                                 <Typography.Body>Join or create a room to provide a new place for trolling to the club.</Typography.Body>
                             </Layout.Col>
                         </Layout.Row>}
@@ -112,7 +130,7 @@ export default function ChatContainer() {
                                         <ChatInput.Frame>
                                             <Avatar large backgroundURL={user.photo} />
                                             <ChatInput.Input
-                                                placeholder={roomID ? `Send a message to #${roomName}` : `Join a room to engage Rage Mode`}
+                                                placeholder={`Send a message to #${roomName}`}
                                                 value={input}
                                                 onChange={e => setInput(e.target.value)}
                                                 disabled={!roomID}
