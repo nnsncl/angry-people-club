@@ -9,9 +9,6 @@ import db from '../services/firebase';
 import { selectRoomID, selectRoomName } from '../features/appSlice';
 import { selectUser } from '../features/userSlice';
 
-// import { useFirestoreQuery } from '../hooks/use-firestore-query';
-// import { scrollToBottom } from '../hooks/use-scroll';
-
 import { Message, ChatInput, AppBar, Typography, Button, Avatar } from '../components';
 import { Layout } from '../components/layout/index';
 
@@ -36,7 +33,7 @@ export default function ChatContainer() {
                     )
                 ))
         }
-    }, [roomID])
+    }, [messages, roomID])
 
     useEffect(() => {
         const messagesList = document.getElementById('messages-list');
@@ -46,6 +43,9 @@ export default function ChatContainer() {
     }, [messages])
 
     const handleSendMessage = (e) => {
+        let mlerm = new Audio();
+        mlerm.src = '/mp3/mlerm.mp3';
+
         if (e.key === 'Enter') {
             db
                 .collection('rooms')
@@ -55,8 +55,9 @@ export default function ChatContainer() {
                     timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
                     message: input,
                     user: user,
-                })
-            setInput('')
+                });
+            mlerm.play();
+            setInput('');
         }
     }
 

@@ -18,6 +18,8 @@ const Badge = styled.span`
 export default function MembersContainer({ children }) {
     const [rooms, setRooms] = useState([]);
     const dispatch = useDispatch();
+    let dring = new Audio();
+    dring.src = '/mp3/dring.mp3';
 
     useEffect(() => {
         db
@@ -44,10 +46,12 @@ export default function MembersContainer({ children }) {
                         hasSmallMarginBottom
                         hasBackground
                         flexItem
-                        onClick={() => dispatch(setRommInfos({
-                            roomID: id,
-                            roomName: room.roomName,
-                        }))}>
+                        onClick={() => dispatch(
+                            setRommInfos({
+                                roomID: id,
+                                roomName: room.roomName,
+                        }), dring.play()
+                        )}>
                         <Sidebar.Item>
                             <Avatar large backgroundURL={room.roomPhotoURL} />
                             <Typography.BodySmall><b>{room.roomName}</b></Typography.BodySmall>
