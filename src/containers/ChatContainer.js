@@ -14,8 +14,11 @@ import { Layout } from '../components/layout/index';
 
 export default function ChatContainer() {
     const user = useSelector(selectUser);
+
     const roomID = useSelector(selectRoomID);
     const roomName = useSelector(selectRoomName);
+    const [roomPhoto, setRoomPhoto] = useState('');
+
 
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
@@ -32,8 +35,20 @@ export default function ChatContainer() {
                         doc.data()
                     )
                 ))
+                
+            const docRef = db.collection("rooms").doc(roomID);
+            docRef.get().then(function (doc) {
+                if (doc.exists) {
+                    setRoomPhoto(doc.data().roomPhotoURL)
+                }
+            }).catch(function (error) {
+                console.log("Error getting document:", error);
+            })
+
         }
     }, [messages, roomID])
+
+
 
     useEffect(() => {
         const messagesList = document.getElementById('messages-list');
@@ -41,6 +56,8 @@ export default function ChatContainer() {
             messagesList.scrollTop = (messagesList.offsetHeight * messages.length) / 2;
         }
     }, [messages])
+
+
 
     const handleSendMessage = (e) => {
         let mlerm = new Audio();
@@ -70,7 +87,7 @@ export default function ChatContainer() {
                             ? <Layout.Col size="1" >
                                 <AppBar>
                                     <AppBar.Frame>
-                                        <Avatar Xlarge backgroundURL='https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif' />
+                                        <Avatar Xlarge backgroundURL={roomPhoto} />
                                         <Typography.BodyLarge>{roomName}</Typography.BodyLarge>
                                     </AppBar.Frame>
                                     <AppBar.Frame>
