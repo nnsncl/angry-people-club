@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -19,9 +19,18 @@ export default function ChatContainer() {
     const roomName = useSelector(selectRoomName);
     const [roomPhoto, setRoomPhoto] = useState('');
 
+    const lastMessageRef = useRef();
 
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
+
+
+    const scrollToLastMessage = () => {
+        lastMessageRef.current.scrollIntoView({
+            behavior: "smooth",
+        });
+    }
+    
     // Might be updated with use-firestore-query
     useEffect(() => {
         if (roomID !== null) {
@@ -35,7 +44,18 @@ export default function ChatContainer() {
                         doc.data()
                     )
                 ))
-                
+        }
+    }, [roomID])
+
+    useEffect(() => {
+        if (roomID !== null && messages) {
+            scrollToLastMessage()
+        }
+    },[messages, roomID])
+
+
+    useEffect(() => {
+        if(roomID !== null) {
             const docRef = db.collection("rooms").doc(roomID);
             docRef.get().then(function (doc) {
                 if (doc.exists) {
@@ -44,20 +64,8 @@ export default function ChatContainer() {
             }).catch(function (error) {
                 console.log("Error getting document:", error);
             })
-
         }
-    }, [messages, roomID])
-
-
-
-    useEffect(() => {
-        const messagesList = document.getElementById('messages-list');
-        if (messagesList) {
-            messagesList.scrollTop = (messagesList.offsetHeight * messages.length) / 2;
-        }
-    }, [messages])
-
-
+    }, [roomID])
 
     const handleSendMessage = (e) => {
         let mlerm = new Audio();
@@ -103,7 +111,7 @@ export default function ChatContainer() {
                             : null}
                     </Layout.Row>
                     {roomID
-                        ? <Layout.Row id="messages-list" style={{ flex: '0.8', height: '63vh', maxHeight: '63vh', overflow: 'scroll' }} >
+                        ? <Layout.Row style={{ flex: '0.8', height: '63vh', maxHeight: '63vh', overflow: 'scroll' }} >
                             <Layout.Col size="1" >
                                 {messages.map(message => (
                                     <Message
@@ -113,6 +121,7 @@ export default function ChatContainer() {
                                         timeStamp={message.timeStamp}
                                         content={message.message}
                                     />))}
+                                    <div ref={lastMessageRef} />
                             </Layout.Col>
                         </Layout.Row>
                         : <Layout.Row stretchContent alignCenter hasPadding >
