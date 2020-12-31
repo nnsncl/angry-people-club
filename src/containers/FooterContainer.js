@@ -10,7 +10,7 @@ export default function FooterContainer() {
                 </svg>
             </Footer.Frame>
             <Footer.Frame>
-                <Typography.BodySmall>Take a 👀 at the <a href="https://github.com/nnsncl" rel="noopener noreferrer" title="Go to project's creator github" target="_blank" >source code</a>.</Typography.BodySmall>
+                <Typography.BodySmall>Take a 👀 at the <a href="https://github.com/nnsncl/angry-people-club" rel="noopener noreferrer" title="Go to project's creator github" target="_blank" >source code</a>.</Typography.BodySmall>
             </Footer.Frame>
         </Footer>
     )
