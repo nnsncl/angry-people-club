@@ -8,7 +8,7 @@ import db from '../services/firebase';
 import { motion } from 'framer-motion';
 import { layoutVariant } from '../theme/animations/index'
 
-import { Modal, Sidebar, Avatar, Typography, Input, Button } from '../components';
+import { Modal, Sidebar, Avatar, Typography, Input, Button, Flashbag } from '../components';
 import { Layout } from '../components/layout/index';
 
 import {
@@ -25,25 +25,39 @@ export default function Home() {
 
     const [userName, setUserName] = useState('');
     const [userPhoto, setUserPhoto] = useState('');
+    const [userInfosError, setUserInfosError] = useState(false);
 
     const [roomName, setRoomName] = useState('');
     const [roomPhoto, setRoomPhoto] = useState('');
+    const [roomError, setRoomError] = useState(false);
 
-    const handleUserInfosUpdate = () => {
-        auth.currentUser.updateProfile({
-            displayName: `${userName}`,
-            photoURL: `${userPhoto}`,
-        })
+    const handleUserInfosUpdate = (e) => {
+        if (userName && userPhoto) {
+            auth.currentUser.updateProfile({
+                displayName: `${userName}`,
+                photoURL: `${userPhoto}`,
+            })
+            userInfosError === true && setUserInfosError(false);
+            setToggleProfileModal(!toggleProfileModal);
+        } else {
+            e.preventDefault();
+            setUserInfosError(true);
+        }
+
+
     }
 
     const handleAddRoom = () => {
-        if (roomName) {
+        if (roomName && roomPhoto) {
             db.collection('rooms').add({
                 roomName: `${roomName}`,
                 roomPhotoURL: `${roomPhoto}`,
             })
+            roomError === true && setRoomError(false);
+            setToggleRoomModal(!toggleRoomModal);
+        } else {
+            setRoomError(true);
         }
-        setToggleRoomModal(!toggleRoomModal)
     }
 
     return (
@@ -58,14 +72,20 @@ export default function Home() {
                 toggleModal={toggleProfileModal}
                 setToggleModal={setToggleProfileModal}
             >
+                {userInfosError
+                    && <Flashbag>
+                        <Typography.BodySmall>You must fill the fields to edit your informations</Typography.BodySmall>
+                    </Flashbag>}
+
                 <Typography.Body>Your actual personnal informations are based on the Google account you've logged in with.</Typography.Body>
+
                 <form >
                     <Input.Label htmlFor='user-name' >Username</Input.Label>
                     <Input
                         type='text'
                         name='user-name'
                         placeholder={auth.currentUser.displayName}
-                        defaultValue={userName ? userName : auth.currentUser.displayName}
+                        defaultValue=''
                         onChange={e => setUserName(e.target.value)}
                     />
                     <Input.Label htmlFor='user-photo' >Profile picture URL</Input.Label>
@@ -73,7 +93,7 @@ export default function Home() {
                         type='text'
                         name='user-photo'
                         placeholder={auth.currentUser.photoURL}
-                        defaultValue={userPhoto ? userPhoto : auth.currentUser.photoURL}
+                        defaultValue=''
                         onChange={e => setUserPhoto(e.target.value)}
                     />
                     <div>
@@ -87,6 +107,10 @@ export default function Home() {
                 toggleModal={toggleRoomModal}
                 setToggleModal={setToggleRoomModal}
             >
+                {roomError
+                    && <Flashbag>
+                        <Typography.BodySmall>You must fill the fields to add a room</Typography.BodySmall>
+                    </Flashbag>}
                 <form onSubmit={e => e.preventDefault()} >
                     <Input.Label htmlFor='room-name' >Room name</Input.Label>
                     <Input

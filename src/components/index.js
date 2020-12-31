@@ -10,5 +10,6 @@ export { default as Modal } from './Modal/index';
 export { default as Input } from './Input/index';
 export { default as ChatInput } from './ChatInput/index';
 export { default as Button } from './Button/index';
+export { default as Flashbag } from './Flashbag/index';
 export { default as Footer } from './Footer/index';
 export * from './AnimatedTitle/index'
